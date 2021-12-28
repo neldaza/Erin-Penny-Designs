@@ -15,7 +15,7 @@ const app = express();
 
 app.use(staticMiddleware);
 
-app.get('/api/images', (req, res) => {
+app.get('/api/images', (req, res, next) => {
   const sql = `
      select  "url",
              "projectId"
@@ -25,7 +25,6 @@ app.get('/api/images', (req, res) => {
     .then(result => {
       res.json(result.rows);
     })
-    // eslint-disable-next-line no-undef
     .catch(err => next(err));
 });
 
