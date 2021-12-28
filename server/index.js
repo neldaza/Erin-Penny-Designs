@@ -17,9 +17,11 @@ app.use(staticMiddleware);
 
 app.get('/api/images', (req, res, next) => {
   const sql = `
-     select  "url",
-             "projectId"
+     select  "projectId",
+             "name",
+             "url"
        from  "photos"
+       join  "projects" using ("projectId")
 `;
   db.query(sql)
     .then(result => {
