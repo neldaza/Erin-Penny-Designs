@@ -2,10 +2,32 @@ require('dotenv/config');
 const express = require('express');
 const errorMiddleware = require('./error-middleware');
 const staticMiddleware = require('./static-middleware');
+const pg = require('pg');
+
+const db = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 const app = express();
 
 app.use(staticMiddleware);
+
+app.get('/api/images', (req, res) => {
+  const sql = `
+     select  "url",
+             "projectId"
+       from  "photos"
+`;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows);
+    })
+    // eslint-disable-next-line no-undef
+    .catch(err => next(err));
+});
 
 app.use(errorMiddleware);
 
