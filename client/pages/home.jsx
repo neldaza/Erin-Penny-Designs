@@ -1,4 +1,5 @@
 import React from 'react';
+import Projects from './projects';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -24,10 +25,11 @@ export default class Home extends React.Component {
             <i className="fas fa-align-justify home-tab"></i>
           </div>
         </div>
+        <Projects />
       {
       // eslint-disable-next-line array-callback-return
       this.state.images.map(image => {
-        if (image.photoId === 3) {
+        if (image.homepage === true) {
           return (
         <img key={image.photoId} src={image.url} className='background'/>
           );

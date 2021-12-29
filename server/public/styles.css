@@ -23,3 +23,33 @@
   font-size: 19pt;
   opacity: 0.38;
 }
+
+.projects-opacity {
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  height: 100vh;
+  width: 100%;
+}
+
+.cancel-x-holder {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.cancel-x {
+  color: white;
+  font-size: 25pt;
+}
+
+.project-pictures {
+  height: 123px;
+  width: 121px;
+}
+
+.projects-holder {
+  margin-top: 3.5rem;
+}
+
+.project-names-text {
+  font-family: Montserrat, sans-serif;
+  color: white;
+}

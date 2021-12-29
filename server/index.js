@@ -20,7 +20,8 @@ app.get('/api/images', (req, res, next) => {
   const sql = `
      select  "photoId",
              "name",
-             "url"
+             "url",
+             "homepage"
        from  "photos"
        join  "projects" using ("projectId")
 `;

@@ -28,6 +28,7 @@ CREATE TABLE "public"."photos" (
 	"projectId" int NOT NULL,
 	"url" TEXT NOT NULL,
 	"createdAt" timestamp with time zone NOT NULL,
+  "homepage" BOOLEAN NOT NULL,
 	CONSTRAINT "photos_pk" PRIMARY KEY ("photoId")
 ) WITH (
   OIDS=FALSE

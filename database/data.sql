@@ -1,29 +1,35 @@
 insert into "projects" ("name")
      values ('FIT'), ('Hudson Yards'), ('Kalish'), ('HBK'), ('45th Street');
 
-insert into "photos" ( "projectId", "url", "createdAt")
+insert into "photos" ( "projectId", "url", "createdAt", "homepage")
 values (
   1,
   '/images/FIT.png',
-  now()
-  ),  (
+  now(),
+  FALSE
+  ),(
   2,
   '/images/hudsonyards.jpeg',
-  now()
-  ),  (
+  now(),
+  FALSE
+  ), (
   2,
   '/images/homepageHudson.jpeg',
-  now()
+  now(),
+  TRUE
   ),   (
   3,
   '/images/kalish.png',
-  now()
+  now(),
+  FALSE
   ),  (
   4,
   '/images/hbk.png',
-  now()
+  now(),
+  FALSE
   ),  (
   5,
   '/images/45thstreet.jpeg',
-  now()
+  now(),
+  FALSE
   );
