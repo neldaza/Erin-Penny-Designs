@@ -1,0 +1,25 @@
+.background {
+  height: 100vh;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: Montserrat, sans-serif;
+}
+
+.home-logo {
+  font-size: 14pt;
+  opacity: 0.38;
+}
+
+.home-logo-designs {
+  font-weight: 700;
+}
+
+.home-tab {
+  font-size: 19pt;
+  opacity: 0.38;
+}

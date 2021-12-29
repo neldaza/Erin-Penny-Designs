@@ -16,8 +16,9 @@ const app = express();
 app.use(staticMiddleware);
 
 app.get('/api/images', (req, res, next) => {
+
   const sql = `
-     select  "projectId",
+     select  "photoId",
              "name",
              "url"
        from  "photos"

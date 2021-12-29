@@ -8,9 +8,13 @@ values (
   now()
   ),  (
   2,
-  '/images/hudsonyards.png',
+  '/images/hudsonyards.jpeg',
   now()
   ),  (
+  2,
+  '/images/homepageHudson.jpeg',
+  now()
+  ),   (
   3,
   '/images/kalish.png',
   now()
@@ -20,6 +24,6 @@ values (
   now()
   ),  (
   5,
-  '/images/45thstreet.png',
+  '/images/45thstreet.jpeg',
   now()
   );
