@@ -41,4 +41,7 @@
 .project-names-text {
   font-family: Montserrat, sans-serif;
   color: white;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }

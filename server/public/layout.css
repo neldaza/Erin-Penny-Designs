@@ -130,6 +130,7 @@
 }
 
 .projects-opacity {
+  top: 0;
   width: 100%;
   height: 100vh;
 }
@@ -165,7 +166,7 @@
   }
 
   .projects-opacity {
-    position: fixed;
+    top: 0;
     overflow-y: scroll;
   }
 
@@ -209,7 +210,6 @@
   }
 
   .projects-opacity {
-    position: fixed;
     top: 3rem;
     left: 3rem;
     right: 3rem;

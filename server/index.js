@@ -21,7 +21,8 @@ app.get('/api/images', (req, res, next) => {
      select  "photoId",
              "name",
              "url",
-             "homepage"
+             "homepage",
+             "specific"
        from  "photos"
        join  "projects" using ("projectId")
 `;
