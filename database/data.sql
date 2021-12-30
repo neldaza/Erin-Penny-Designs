@@ -32,4 +32,29 @@ values (
   '/images/45thstreet.jpeg',
   now(),
   FALSE
+  ),  (
+  5,
+  '/images/45thstreet/1.jpeg',
+  now(),
+  FALSE
+  ),  (
+  5,
+  '/images/45thstreet/2.jpeg',
+  now(),
+  FALSE
+  ),  (
+  5,
+  '/images/45thstreet/3.jpeg',
+  now(),
+  FALSE
+  ),  (
+  5,
+  '/images/45thstreet/4.jpeg',
+  now(),
+  FALSE
+  ),  (
+  5,
+  '/images/45thstreet/5.jpeg',
+  now(),
+  FALSE
   );
