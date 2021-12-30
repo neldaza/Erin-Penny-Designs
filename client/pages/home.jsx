@@ -27,15 +27,13 @@ export default class Home extends React.Component {
         </div>
         <Projects />
       {
-      // eslint-disable-next-line array-callback-return
-      this.state.images.map(image => {
-        if (image.homepage === true) {
-          return (
-        <img key={image.photoId} src={image.url} className='background'/>
-          );
-        }
+      this.state.images.filter(images => images.homepage === true
+      ).map(homepageImage => {
+        return (
+            <img key={homepageImage.photoId} src={homepageImage.url} className='background' />
+        );
       })
-      }
+     }
   </div>
     );
   }

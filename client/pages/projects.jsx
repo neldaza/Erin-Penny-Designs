@@ -23,34 +23,29 @@ export default class Projects extends React.Component {
         </div>
         <div className="projects-holder row text-align-center width-100p">
           <ul className="first-project-list column-half">
-                  {
-                    // eslint-disable-next-line array-callback-return
-                    this.state.images.map(image => {
-                      if (image.homepage === false && image.photoId % 2 === 0) {
-                        return (
-                          <li key={image.name}>
-                            <img key={image.projectId} src={image.url} className='project-pictures' />
-                            <p className="project-names-text">{image.name}</p>
-                          </li>
-                        );
-                      }
+                {
+                  this.state.images.filter(images => images.homepage === false && images.photoId % 2 === 0)
+                    .map(evenPhotos => {
+                      return (
+                        <li key={evenPhotos.name}>
+                          <img key={evenPhotos.projectId} src={evenPhotos.url} className='project-pictures' />
+                          <p className="project-names-text">{evenPhotos.name}</p>
+                        </li>
+                      );
                     })
-                  }
+                }
           </ul>
           <ul className="second-project-list column-half">
                   {
-                    // eslint-disable-next-line array-callback-return
-                    this.state.images.map(image => {
-                      if (image.homepage === false && image.photoId % 2 !== 0) {
+                    this.state.images.filter(images => images.homepage === false && images.photoId % 2 !== 0)
+                      .map(oddPhotos => {
                         return (
-                          <li key={image.name}>
-                            <img key={image.projectId} src={image.url} className='project-pictures' />
-                            <p className="project-names-text">{image.name}</p>
-                          </li>
-
+                        <li key={oddPhotos.name}>
+                          <img key={oddPhotos.projectId} src={oddPhotos.url} className='project-pictures' />
+                          <p className="project-names-text">{oddPhotos.name}</p>
+                        </li>
                         );
-                      }
-                    })
+                      })
                   }
                   <li className="row arrow-list">
                 <div className="column-half arrow-holder-left">
