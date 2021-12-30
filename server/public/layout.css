@@ -153,6 +153,10 @@
   font-size: 10pt;
 }
 
+.arrow-list {
+  display: none;
+}
+
 @media screen and (min-width: 500px) {
   .container {
     width: 100%;
@@ -171,6 +175,10 @@
 
   .projects-holder {
     margin-top: 0;
+  }
+
+  .arrow-list {
+    display: none;
   }
 }
 
@@ -211,7 +219,30 @@
   }
 
   .project-pictures {
-    height: 270px;
-    width: 271px;
+    height: 20vw;
+    width: 20vw;
   }
+
+  .arrow-list {
+    display: flex;
+    height: 20vw;
+    width: 20vw;
+    align-items: center;
+    font-size: 40pt;
+    color: white;
+  }
+
+  .arrow-holder-left {
+    text-align: left;
+  }
+
+  .arrow-holder-right {
+    text-align: right;
+  }
+
+  .second-project-list {
+    flex-direction: row;
+  }
+
+  .second-project-list :nth-child(2) { order: 2; }
 }
