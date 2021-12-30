@@ -16,13 +16,13 @@ export default class Projects extends React.Component {
 
   render() {
     return (
-      <>
+    <>
       <div className="projects-opacity position-absolute justify-content-center flex-wrap-wrapped">
         <div className="cancel-x-holder column-full">
           <i className="fas fa-times cancel-x"></i>
         </div>
         <div className="projects-holder row text-align-center width-100p">
-          <ul className="column-half">
+          <ul className="first-project-list column-half">
                   {
                     // eslint-disable-next-line array-callback-return
                     this.state.images.map(image => {
@@ -37,7 +37,7 @@ export default class Projects extends React.Component {
                     })
                   }
           </ul>
-          <ul className="column-half">
+          <ul className="second-project-list column-half">
                   {
                     // eslint-disable-next-line array-callback-return
                     this.state.images.map(image => {
@@ -47,6 +47,7 @@ export default class Projects extends React.Component {
                             <img key={image.projectId} src={image.url} className='project-pictures' />
                             <p className="project-names-text">{image.name}</p>
                           </li>
+
                         );
                       }
                     })
@@ -54,7 +55,7 @@ export default class Projects extends React.Component {
           </ul>
         </div>
       </div>
-      </>
+    </>
     );
   }
 
