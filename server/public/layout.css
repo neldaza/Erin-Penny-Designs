@@ -133,6 +133,7 @@
   top: 0;
   width: 100%;
   height: 100vh;
+  overflow-y: scroll;
 }
 
 .projects-holder {
@@ -156,6 +157,31 @@
 
 .arrow-list {
   display: none;
+}
+
+.specific-project-header {
+  width: 80%;
+  margin: auto;
+  margin-top: 2.5rem;
+}
+
+.specific-main-image {
+  width: 100%;
+}
+
+.specific-gallery-image {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-names-text {
+  display: block;
+}
+
+.clean-links {
+  display: inline-block;
+  margin-block-start: unset;
 }
 
 @media screen and (min-width: 500px) {

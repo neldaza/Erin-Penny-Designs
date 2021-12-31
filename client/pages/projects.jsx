@@ -3,7 +3,7 @@ import React from 'react';
 export default class Projects extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { images: [], view: 'projects' };
+    this.state = { images: [] };
   }
 
   componentDidMount() {
@@ -29,8 +29,14 @@ export default class Projects extends React.Component {
                     .map(evenPhotos => {
                       return (
                         <li key={evenPhotos.name}>
-                          <img key={evenPhotos.photoId} src={evenPhotos.url} className='project-pictures' />
-                          <a href={`#project-details?projectId=${evenPhotos.projectId}`}className="project-names-text">{evenPhotos.name}</a>
+                          <a className="clean-links" href={`#project-details?projectId=${evenPhotos.projectId}`}>
+                            <img key={evenPhotos.photoId} src={evenPhotos.url} className='project-pictures' />
+                          </a>
+                          <p>
+                            <a href={`#project-details?projectId=${evenPhotos.projectId}`} className="clean-links project-names-text">
+                              {evenPhotos.name}
+                            </a>
+                          </p>
                         </li>
                       );
                     })
@@ -42,9 +48,14 @@ export default class Projects extends React.Component {
                       .map(oddPhotos => {
                         return (
                         <li key={oddPhotos.name}>
-                          <img key={oddPhotos.photoId} src={oddPhotos.url} className='project-pictures' />
-                          <a href={`#project-details?projectId=${oddPhotos.projectId}`}
-                          className="project-names-text">{oddPhotos.name}</a>
+                          <a className="clean-links" href={`#project-details?projectId=${oddPhotos.projectId}`}>
+                            <img key={oddPhotos.photoId} src={oddPhotos.url} className='project-pictures' />
+                          </a>
+                            <p>
+                              <a href={`#project-details?projectId=${oddPhotos.projectId}`} className="clean-links project-names-text">
+                                {oddPhotos.name}
+                              </a>
+                            </p>
                         </li>
                         );
                       })

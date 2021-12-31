@@ -39,10 +39,12 @@ app.get('/api/images/:projectId', (req, res, next) => {
   const sql = `
     select   "name",
              "photoId",
-             "url"
+             "url",
+             "homepage",
+             "specific"
       from   "photos"
       join   "projects" using ("projectId")
-     where   "projectId" = $1 and "specific" = true
+     where   "projectId" = $1
     `;
   const get = [reqId];
   db.query(sql, get)
