@@ -78,3 +78,25 @@
   font-family: Montserrat, sans-serif;
   font-weight: 400;
 }
+
+.tab {
+  display: flex;
+  justify-content: left;
+  border-style: solid;
+  border-color: black;
+  height: inherit;
+  position: fixed;
+  background-color: white;
+  transform: translateX(24rem);
+  transition: transform 0.25s ease;
+}
+
+.tab-out {
+  transition: transform 0.25s ease;
+  transform: translateX(5rem);
+}
+
+.index-p {
+  margin-top: 2.5rem;
+  font-size: 14pt;
+}

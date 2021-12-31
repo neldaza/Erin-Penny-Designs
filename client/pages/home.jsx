@@ -4,6 +4,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = { images: [] };
+    this.handleDrawer = this.handleDrawer.bind(this);
   }
 
   componentDidMount() {
@@ -14,6 +15,10 @@ export default class Home extends React.Component {
       });
   }
 
+  handleDrawer(event) {
+    this.props.onDrawerClick();
+  }
+
   render() {
 
     return (
@@ -21,7 +26,7 @@ export default class Home extends React.Component {
         <div className="header row position-fixed width-100p">
           <div className="column-full flex align-items-center space-between">
             <p className="home-logo">ERIN PENNY <a className="home-logo-designs">DESIGNS</a></p>
-            <i className="fas fa-align-justify home-tab"></i>
+            <i className="fas fa-align-justify home-tab" onClick={this.handleDrawer}></i>
           </div>
         </div>
       {
@@ -32,7 +37,7 @@ export default class Home extends React.Component {
         );
       })
      }
-  </div>
+    </div>
     );
   }
 }
