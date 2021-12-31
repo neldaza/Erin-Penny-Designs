@@ -267,24 +267,6 @@ values (
   FALSE,
   TRUE
   ),  (
-  3,
-  '/images/Kalish/8.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  3,
-  '/images/Kalish/9.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  3,
-  '/images/Kalish/10.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
   4,
   '/images/HBK/1.png',
   now(),
