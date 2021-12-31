@@ -19,20 +19,24 @@ export default class SpecificProject extends React.Component {
         <div className="cancel-x-holder column-full">
           <i className="fas fa-times cancel-x"></i>
         </div>
-        <div className="specific-project-header">
+        <div className="specific-project">
+          <div className='specific-project-header'>
           {
             this.state.images.filter(images => images.homepage === false && images.specific === false)
               .map(mainImage => {
                 return (
                   <React.Fragment key={mainImage.photoId}>
-                  <img src={mainImage.url} className="specific-main-image" />
-                  <div className="specific-main-text-holder">
+                  <div className='specific-main-image-holder column-half'>
+                    <img src={mainImage.url} className="specific-main-image" />
+                  </div>
+                  <div className="specific-main-text-holder column-half">
                     <h2 className="specific-main-text">{mainImage.name}</h2>
                   </div>
                   </React.Fragment>
                 );
               })
           }
+          </div>
           <div className="specific-project-gallery">
               {
                 this.state.images.filter(images => images.specific === true)

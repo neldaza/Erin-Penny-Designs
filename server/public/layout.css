@@ -159,7 +159,7 @@
   display: none;
 }
 
-.specific-project-header {
+.specific-project {
   width: 80%;
   margin: auto;
   margin-top: 2.5rem;
@@ -176,6 +176,7 @@
 }
 
 .project-names-text {
+  font-size: 10.5pt;
   display: block;
 }
 
@@ -206,6 +207,10 @@
 
   .arrow-list {
     display: none;
+  }
+
+  .project-names-text {
+    font-size: 15pt;
   }
 }
 
@@ -271,4 +276,27 @@
   }
 
   .second-project-list :nth-child(2) { order: 2; }
+
+  .project-names-text {
+    font-size: 10.5pt;
+  }
+
+  .specific-project-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .specific-main-text-holder {
+    text-align: center;
+  }
+
+  .specific-main-image {
+    height: 30vw;
+    width: 30vw;
+  }
+
+  .specific-main-image-holder {
+    text-align: center;
+  }
 }

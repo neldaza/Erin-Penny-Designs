@@ -63,12 +63,6 @@ values (
   FALSE,
   TRUE
   ),  (
-  5,
-  '/images/45thstreet/5.jpeg',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
   1,
   '/images/FIT/1.png',
   now(),
@@ -153,12 +147,6 @@ values (
   FALSE,
   TRUE
   ),  (
-  1,
-  '/images/FIT/15.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
   2,
   '/images/hudsonyards/1.jpg',
   now(),
@@ -190,7 +178,7 @@ values (
   TRUE
   ),  (
   2,
-  '/images/hudsonyards/6.jpeg',
+  '/images/hudsonyards/6.png',
   now(),
   FALSE,
   TRUE
@@ -215,12 +203,6 @@ values (
   ),  (
   2,
   '/images/hudsonyards/10.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  2,
-  '/images/hudsonyards/11.png',
   now(),
   FALSE,
   TRUE
@@ -257,12 +239,6 @@ values (
   ),  (
   3,
   '/images/Kalish/6.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  3,
-  '/images/Kalish/7.png',
   now(),
   FALSE,
   TRUE
@@ -329,12 +305,6 @@ values (
   ),  (
   4,
   '/images/HBK/11.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  4,
-  '/images/HBK/12.png',
   now(),
   FALSE,
   TRUE

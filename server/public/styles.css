@@ -42,7 +42,6 @@
   font-family: Montserrat, sans-serif;
   color: white;
   text-decoration: none;
-  font-size: 10.5pt;
 }
 
 .specific-main-text {
@@ -52,12 +51,16 @@
 }
 
 .specific-main-text-holder {
+  margin-bottom: 1rem;
+}
+
+.specific-project-gallery {
   border-style: solid;
   border-left-color: transparent;
   border-right-color: transparent;
-  border-top-color: transparent;
-  border-bottom-color: white;
-  margin-bottom: 1rem;
+  border-top-color: white;
+  border-bottom-color: transparent;
+  padding-top: 1rem;
 }
 
 .gallery-footer {
