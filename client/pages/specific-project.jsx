@@ -37,7 +37,7 @@ export default class SpecificProject extends React.Component {
               })
           }
           </div>
-          <div className="specific-project-gallery">
+          <div className="specific-project-gallery transparent-borders">
               {
                 this.state.images.filter(images => images.specific === true)
                   .map(galleryImages => {
@@ -48,7 +48,7 @@ export default class SpecificProject extends React.Component {
                     );
                   })
               }
-              <div className="gallery-footer text-align-right">
+              <div className="gallery-footer text-align-right transparent-borders">
                 <h2><a href="#" className="gallery-footer-text">Back To Projects</a></h2>
               </div>
           </div>

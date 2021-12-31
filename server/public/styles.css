@@ -54,21 +54,21 @@
   margin-bottom: 1rem;
 }
 
-.specific-project-gallery {
+.transparent-borders {
   border-style: solid;
   border-left-color: transparent;
   border-right-color: transparent;
-  border-top-color: white;
   border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+
+.specific-project-gallery {
+  border-top-color: white;
   padding-top: 1rem;
 }
 
 .gallery-footer {
-  border-style: solid;
-  border-left-color: transparent;
-  border-right-color: transparent;
   border-top-color: white;
-  border-bottom-color: transparent;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
 }
