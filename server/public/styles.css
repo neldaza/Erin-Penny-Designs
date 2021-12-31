@@ -41,4 +41,40 @@
 .project-names-text {
   font-family: Montserrat, sans-serif;
   color: white;
+  text-decoration: none;
+}
+
+.specific-main-text {
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.specific-main-text-holder {
+  margin-bottom: 1rem;
+}
+
+.transparent-borders {
+  border-style: solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+}
+
+.specific-project-gallery {
+  border-top-color: white;
+  padding-top: 1rem;
+}
+
+.gallery-footer {
+  border-top-color: white;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.gallery-footer-text {
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
 }

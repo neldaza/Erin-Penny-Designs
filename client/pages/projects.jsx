@@ -17,19 +17,26 @@ export default class Projects extends React.Component {
   render() {
     return (
     <>
-      <div className="projects-opacity position-absolute justify-content-center flex-wrap-wrapped">
+      <div className="projects-opacity position-fixed justify-content-center flex-wrap-wrapped">
         <div className="cancel-x-holder column-full">
           <i className="fas fa-times cancel-x"></i>
         </div>
         <div className="projects-holder row text-align-center width-100p">
           <ul className="first-project-list column-half">
                 {
-                  this.state.images.filter(images => images.homepage === false && images.photoId % 2 === 0)
+                  this.state.images.filter(images => images.homepage === false && images.photoId % 2 === 0 &&
+                    images.specific === false)
                     .map(evenPhotos => {
                       return (
                         <li key={evenPhotos.name}>
-                          <img key={evenPhotos.projectId} src={evenPhotos.url} className='project-pictures' />
-                          <p className="project-names-text">{evenPhotos.name}</p>
+                          <a className="clean-links" href={`#project-details?projectId=${evenPhotos.projectId}`}>
+                            <img key={evenPhotos.photoId} src={evenPhotos.url} className='project-pictures' />
+                          </a>
+                          <p>
+                            <a href={`#project-details?projectId=${evenPhotos.projectId}`} className="clean-links project-names-text">
+                              {evenPhotos.name}
+                            </a>
+                          </p>
                         </li>
                       );
                     })
@@ -37,12 +44,18 @@ export default class Projects extends React.Component {
           </ul>
           <ul className="second-project-list column-half">
                   {
-                    this.state.images.filter(images => images.homepage === false && images.photoId % 2 !== 0)
+                    this.state.images.filter(images => images.homepage === false && images.photoId % 2 !== 0 && images.specific === false)
                       .map(oddPhotos => {
                         return (
                         <li key={oddPhotos.name}>
-                          <img key={oddPhotos.projectId} src={oddPhotos.url} className='project-pictures' />
-                          <p className="project-names-text">{oddPhotos.name}</p>
+                          <a className="clean-links" href={`#project-details?projectId=${oddPhotos.projectId}`}>
+                            <img key={oddPhotos.photoId} src={oddPhotos.url} className='project-pictures' />
+                          </a>
+                            <p>
+                              <a href={`#project-details?projectId=${oddPhotos.projectId}`} className="clean-links project-names-text">
+                                {oddPhotos.name}
+                              </a>
+                            </p>
                         </li>
                         );
                       })
