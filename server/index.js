@@ -18,7 +18,8 @@ app.use(staticMiddleware);
 app.get('/api/images', (req, res, next) => {
 
   const sql = `
-     select  "photoId",
+     select  "projectId",
+             "photoId",
              "name",
              "url",
              "homepage",
@@ -27,6 +28,24 @@ app.get('/api/images', (req, res, next) => {
        join  "projects" using ("projectId")
 `;
   db.query(sql)
+    .then(result => {
+      res.json(result.rows);
+    })
+    .catch(err => next(err));
+});
+
+app.get('/api/images/:projectId', (req, res, next) => {
+  const reqId = Number(req.params.projectId);
+  const sql = `
+    select   "name",
+             "photoId",
+             "url"
+      from   "photos"
+      join   "projects" using ("projectId")
+     where   "projectId" = $1 and "specific" = true
+    `;
+  const get = [reqId];
+  db.query(sql, get)
     .then(result => {
       res.json(result.rows);
     })
