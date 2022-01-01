@@ -1,7 +1,12 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .background {
   height: 100vh;
-  max-width: 100%;
-  object-fit: cover;
+  background-size: cover;
 }
 
 .header {
@@ -77,4 +82,34 @@
   color: white;
   font-family: Montserrat, sans-serif;
   font-weight: 400;
+}
+
+.tab {
+  display: flex;
+  justify-content: left;
+  height: inherit;
+  position: fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  transition: transform 0.25s ease;
+}
+
+.tab-out {
+  transition: transform 0.25s ease;
+}
+
+.index-p {
+  margin-top: 2.5rem;
+  font-size: 14pt;
+  color: darkgrey;
+  font-family: Montserrat, sans-serif;
+}
+
+.drawer-text-top {
+  padding-top: 2.5rem;
+}
+
+.open-tab {
+  opacity: 1;
+  position: relative;
+  color: darkgrey;
 }

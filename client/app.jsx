@@ -3,13 +3,25 @@ import Home from './pages/home';
 import Projects from './pages/projects';
 import parseRoute from './lib/parse-route';
 import SpecificProject from './pages/specific-project';
+import AppDrawer from './pages/drawer';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: parseRoute(window.location.hash)
+      route: parseRoute(window.location.hash),
+      isDrawerOpen: 'no'
     };
+    this.openDrawer = this.openDrawer.bind(this);
+
+  }
+
+  openDrawer() {
+    if (this.state.isDrawerOpen === 'no') {
+      this.setState({ isDrawerOpen: 'yes' });
+    } else {
+      this.setState({ isDrawerOpen: 'no' });
+    }
   }
 
   componentDidMount() {
@@ -20,7 +32,7 @@ export default class App extends React.Component {
 
   renderPage() {
     const { route } = this.state;
-    if (route.path === '') {
+    if (route.path === 'projects') {
       return <Projects />;
     }
     if (route.path === 'project-details') {
@@ -33,7 +45,8 @@ export default class App extends React.Component {
     return (
     <div className="container position-relative">
     <>
-    <Home />
+    <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}/>
+    <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>
     {this.renderPage()}
     </>
     </div>
