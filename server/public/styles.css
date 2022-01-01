@@ -1,7 +1,6 @@
 .background {
   height: 100vh;
-  max-width: 100%;
-  object-fit: cover;
+  background-size: cover;
 }
 
 .header {
@@ -82,11 +81,9 @@
 .tab {
   display: flex;
   justify-content: left;
-  border-style: solid;
-  border-color: black;
   height: inherit;
   position: fixed;
-  background-color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   transform: translateX(24rem);
   transition: transform 0.25s ease;
 }
@@ -99,4 +96,11 @@
 .index-p {
   margin-top: 2.5rem;
   font-size: 14pt;
+}
+
+.open-tab {
+  opacity: 1;
+  position: relative;
+  z-index: -1;
+  color: purple;
 }

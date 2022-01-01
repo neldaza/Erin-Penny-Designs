@@ -19,10 +19,12 @@ export default class AppDrawer extends React.Component {
     return (
           <div className={`row tab ${open}`}>
             <div className="column-full">
-              <h1>Menu</h1>
-              <p className="index-p"><a>About</a></p>
-              <p className="index-p"><a>Get Started</a></p>
-              <p className="index-p"><a>Sign In</a></p>
+              <p className="index-p"><a>LOGIN</a></p>
+              <p className="index-p"><a>ABOUT</a></p>
+              <p className="index-p"><a>CONTACT</a></p>
+              <p className="index-p"><a>PROJECTS</a></p>
+              <p className="index-p"><a>REVIEWS</a></p>
+              <p className="index-p"><a>REGISTER</a></p>
             </div>
           </div>
     );

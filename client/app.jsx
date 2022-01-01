@@ -45,7 +45,7 @@ export default class App extends React.Component {
     return (
     <div className="container position-relative">
     <>
-    <Home onDrawerClick={this.openDrawer} />
+    <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}/>
     <AppDrawer isOpen={this.state.isDrawerOpen} />
     {this.renderPage()}
     </>
