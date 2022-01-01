@@ -191,6 +191,12 @@
   top: -3px;
   width: 100%;
   padding-left: 2rem;
+  transform: translateX(105vw);
+}
+
+.tab-out {
+  transform: translateX(20vw);
+  top: 0;
 }
 
 @media screen and (min-width: 500px) {
@@ -219,6 +225,11 @@
 
   .project-names-text {
     font-size: 15pt;
+  }
+
+  .tab-out {
+    transform: translateX(60vw);
+    top: 0;
   }
 }
 
@@ -306,5 +317,10 @@
 
   .specific-main-image-holder {
     text-align: center;
+  }
+
+  .tab-out {
+    transform: translateX(75vw);
+    top: 0;
   }
 }

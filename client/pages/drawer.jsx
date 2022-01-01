@@ -5,7 +5,12 @@ export default class AppDrawer extends React.Component {
     super(props);
     this.state = { open: 'no' };
     this.renderDrawer = this.renderDrawer.bind(this);
+    this.handleDrawer = this.handleDrawer.bind(this);
 
+  }
+
+  handleDrawer(event) {
+    this.props.onDrawerClick();
   }
 
   renderDrawer() {
@@ -22,7 +27,7 @@ export default class AppDrawer extends React.Component {
               <p className="index-p"><a>LOGIN</a></p>
               <p className="index-p"><a>ABOUT</a></p>
               <p className="index-p"><a>CONTACT</a></p>
-              <p className="index-p"><a>PROJECTS</a></p>
+              <p className="index-p"><a href="#projects" onClick={this.handleDrawer}>PROJECTS</a></p>
               <p className="index-p"><a>REVIEWS</a></p>
               <p className="index-p"><a>REGISTER</a></p>
             </div>

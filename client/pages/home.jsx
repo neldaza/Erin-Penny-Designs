@@ -7,6 +7,7 @@ export default class Home extends React.Component {
     this.handleDrawer = this.handleDrawer.bind(this);
     this.handleDarkTab = this.handleDarkTab.bind(this);
     this.handleDarkTabColumn = this.handleDarkTabColumn.bind(this);
+    this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
 
   }
 
@@ -20,6 +21,12 @@ export default class Home extends React.Component {
 
   handleDrawer(event) {
     this.props.onDrawerClick();
+  }
+
+  homepageDrawerClose(event) {
+    if (this.props.isOpen === 'yes') {
+      this.props.onDrawerClick();
+    }
   }
 
   handleDarkTab() {
@@ -42,7 +49,7 @@ export default class Home extends React.Component {
     });
     const darkTabColumn = this.handleDarkTabColumn();
     return (
-    <div className="container position-relative background" style={backgroundPic[0]}>
+    <div onClick={this.homepageDrawerClose} className="container position-relative background" style={backgroundPic[0]}>
       <div className="header row position-fixed width-100p">
         <div className="column-75 flex align-items-center space-between">
           <p className="home-logo">ERIN PENNY <a className="home-logo-designs">DESIGNS</a></p>

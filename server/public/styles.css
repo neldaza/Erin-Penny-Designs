@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .background {
   height: 100vh;
   background-size: cover;
@@ -26,6 +31,7 @@
 
 .projects-opacity {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: 2;
 }
 
 .cancel-x-holder {
@@ -85,13 +91,11 @@
   height: inherit;
   position: fixed;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  transform: translateX(24rem);
   transition: transform 0.25s ease;
 }
 
 .tab-out {
   transition: transform 0.25s ease;
-  transform: translateX(5rem);
   z-index: 0;
 }
 
