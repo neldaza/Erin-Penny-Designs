@@ -12,7 +12,6 @@ a {
   padding-left: 1rem;
   padding-right: 1rem;
   font-family: Montserrat, sans-serif;
-  z-index: 1;
 }
 
 .home-logo {
@@ -31,7 +30,6 @@ a {
 
 .projects-opacity {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-  z-index: 2;
 }
 
 .cancel-x-holder {
@@ -90,13 +88,12 @@ a {
   justify-content: left;
   height: inherit;
   position: fixed;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
   transition: transform 0.25s ease;
 }
 
 .tab-out {
   transition: transform 0.25s ease;
-  z-index: 0;
 }
 
 .index-p {

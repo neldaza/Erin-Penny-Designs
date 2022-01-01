@@ -17,7 +17,7 @@ export default class SpecificProject extends React.Component {
       <>
       <div className="projects-opacity position-fixed justify-content-center flex-wrap-wrapped">
         <div className="cancel-x-holder column-full">
-          <i className="fas fa-times cancel-x"></i>
+          <a className="clean-links" href="#"><i className="fas fa-times cancel-x"></i></a>
         </div>
         <div className="specific-project">
           <div className='specific-project-header'>

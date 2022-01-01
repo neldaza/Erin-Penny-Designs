@@ -19,7 +19,7 @@ export default class Projects extends React.Component {
     <>
       <div className="projects-opacity position-fixed justify-content-center flex-wrap-wrapped">
         <div className="cancel-x-holder column-full">
-          <i className="fas fa-times cancel-x"></i>
+          <a className="clean-links" href='#'><i className="fas fa-times cancel-x"></i></a>
         </div>
         <div className="projects-holder row text-align-center width-100p">
           <ul className="first-project-list column-half">

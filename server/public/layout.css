@@ -134,6 +134,7 @@
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
+  z-index: 1;
 }
 
 .projects-holder {
@@ -197,6 +198,10 @@
 .tab-out {
   transform: translateX(20vw);
   top: 0;
+}
+
+.header {
+  z-index: 0;
 }
 
 @media screen and (min-width: 500px) {
@@ -266,6 +271,7 @@
     bottom: 3rem;
     width: unset;
     height: unset;
+    z-index: 0;
   }
 
   .project-pictures {
@@ -322,5 +328,18 @@
   .tab-out {
     transform: translateX(75vw);
     top: 0;
+    z-index: 1;
+  }
+
+  .header {
+    z-index: 2;
+  }
+}
+
+@media only screen and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape) {
+  .projects-holder {
+    margin-top: 6.5rem;
   }
 }
