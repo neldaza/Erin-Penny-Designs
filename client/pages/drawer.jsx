@@ -14,7 +14,6 @@ export default class AppDrawer extends React.Component {
   }
 
   renderDrawer() {
-
     if (this.props.isOpen === 'no') { return ''; }
     if (this.props.isOpen === 'yes') { return 'tab-out'; }
   }

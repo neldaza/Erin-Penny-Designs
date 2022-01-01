@@ -134,7 +134,7 @@
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
-  z-index: 1;
+  z-index: 2;
 }
 
 .projects-holder {
@@ -198,10 +198,11 @@
 .tab-out {
   transform: translateX(20vw);
   top: 0;
+  z-index: 0;
 }
 
 .header {
-  z-index: 0;
+  z-index: 1;
 }
 
 @media screen and (min-width: 500px) {
@@ -235,6 +236,7 @@
   .tab-out {
     transform: translateX(60vw);
     top: 0;
+    overflow-y: scroll;
   }
 }
 
