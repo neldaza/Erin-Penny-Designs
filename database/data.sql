@@ -60,8 +60,8 @@ values (
   5,
   '/images/45thstreet/4.jpeg',
   now(),
-  FALSE,
-  TRUE
+  TRUE,
+  FALSE
   ),  (
   1,
   '/images/FIT/1.png',
@@ -96,8 +96,8 @@ values (
   1,
   '/images/FIT/6.png',
   now(),
-  FALSE,
-  TRUE
+  TRUE,
+  FALSE
   ),  (
   1,
   '/images/FIT/7.png',
@@ -240,8 +240,8 @@ values (
   3,
   '/images/Kalish/6.png',
   now(),
-  FALSE,
-  TRUE
+  TRUE,
+  FALSE
   ),  (
   4,
   '/images/HBK/1.png',
@@ -270,8 +270,8 @@ values (
   4,
   '/images/HBK/5.png',
   now(),
-  FALSE,
-  TRUE
+  TRUE,
+  FALSE
   ),  (
   4,
   '/images/HBK/6.png',
