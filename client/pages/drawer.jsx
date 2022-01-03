@@ -21,7 +21,7 @@ export default class AppDrawer extends React.Component {
   render() {
     const open = this.renderDrawer();
     return (
-          <div className={`row tab ${open}`}>
+          <div className={`my-row tab ${open}`}>
             <div className="column-full drawer-text-top">
               <p className="index-p"><a>LOGIN</a></p>
               <p className="index-p"><a>ABOUT</a></p>

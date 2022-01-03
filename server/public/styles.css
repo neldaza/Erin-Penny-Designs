@@ -6,7 +6,7 @@ a {
 
 .background {
   height: 100vh;
-  background-size: cover;
+  object-fit: cover;
 }
 
 .header {
@@ -17,7 +17,7 @@ a {
 
 .home-logo {
   font-size: 14pt;
-  opacity: 0.38;
+  opacity: 0.5;
 }
 
 .home-logo-designs {
@@ -112,4 +112,16 @@ a {
   opacity: 1;
   position: relative;
   color: darkgrey;
+}
+
+.carousel-control-prev {
+  display: none;
+}
+
+.carousel-control-next-icon {
+  display: none;
+}
+
+.carousel-control-next {
+  width: 100%;
 }

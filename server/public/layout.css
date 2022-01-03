@@ -2,12 +2,12 @@
   display: none !important;
 }
 
-.container {
+.my-container {
   max-width: 575px;
   margin: 0 auto;
 }
 
-.row {
+.my-row {
   display: flex;
 }
 
@@ -205,8 +205,12 @@
   z-index: 1;
 }
 
+.carousel {
+  z-index: 0;
+}
+
 @media screen and (min-width: 500px) {
-  .container {
+  .my-container {
     width: 100%;
     max-width: unset;
     height: 100vh;
@@ -234,14 +238,14 @@
   }
 
   .tab-out {
-    transform: translateX(60vw);
+    transform: translateX(70vw);
     top: 0;
     overflow-y: scroll;
   }
 }
 
 @media screen and (min-width: 1366px) {
-  .container {
+  .my-container {
     width: 100%;
     max-width: unset;
   }
