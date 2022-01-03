@@ -17,7 +17,7 @@ export default class SpecificProject extends React.Component {
       <>
       <div className="projects-opacity position-fixed justify-content-center flex-wrap-wrapped">
         <div className="cancel-x-holder column-full">
-          <a className="clean-links" href="#"><i className="fas fa-times cancel-x"></i></a>
+          <i className="fas fa-times cancel-x"></i>
         </div>
         <div className="specific-project">
           <div className='specific-project-header'>
@@ -26,12 +26,12 @@ export default class SpecificProject extends React.Component {
               .map(mainImage => {
                 return (
                   <React.Fragment key={mainImage.photoId}>
-                  <div className='specific-main-image-holder column-half'>
-                    <img src={mainImage.url} className="specific-main-image" />
-                  </div>
-                  <div className="specific-main-text-holder column-half">
-                    <h2 className="specific-main-text">{mainImage.name}</h2>
-                  </div>
+                    <div className='specific-main-image-holder column-half'>
+                      <img src={mainImage.url} className="specific-main-image" />
+                    </div>
+                    <div className="specific-main-text-holder column-half">
+                      <h2 className="specific-main-text">{mainImage.name}</h2>
+                    </div>
                   </React.Fragment>
                 );
               })
@@ -49,7 +49,7 @@ export default class SpecificProject extends React.Component {
                   })
               }
               <div className="gallery-footer text-align-right transparent-borders">
-                <h2><a href="#projects" className="gallery-footer-text">Back To Projects</a></h2>
+                <h2><a href="#" className="gallery-footer-text">Back To Projects</a></h2>
               </div>
           </div>
         </div>

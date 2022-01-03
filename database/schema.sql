@@ -12,8 +12,8 @@ CREATE TABLE "public"."users" (
 	"lastName" TEXT NOT NULL,
 	"username" TEXT NOT NULL UNIQUE,
 	"password" TEXT NOT NULL,
-	"companyName" TEXT NOT NULL,
-	"isAdmin" BOOLEAN NOT NULL,
+	"companyName" TEXT,
+	"isAdmin" BOOLEAN,
 	"phoneNumber" TEXT,
 	"acceptsTexts" BOOLEAN,
 	CONSTRAINT "users_pk" PRIMARY KEY ("userId")
