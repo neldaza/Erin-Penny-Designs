@@ -57,7 +57,7 @@ export default class Home extends React.Component {
         </div>
       </div>
         {
-          <Carousel controls={true} indicators={false} fade={true} interval={5500}>
+          <Carousel controls={true} indicators={false} fade={true} interval={5000}>
           {
             this.state.images.filter(images => images.homepage === true)
               .map(background => {
