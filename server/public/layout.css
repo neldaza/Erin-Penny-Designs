@@ -238,7 +238,7 @@
   }
 
   .tab-out {
-    transform: translateX(60vw);
+    transform: translateX(70vw);
     top: 0;
     overflow-y: scroll;
   }
