@@ -125,3 +125,62 @@ a {
 .carousel-control-next {
   width: 100%;
 }
+
+.registration-form {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  font-family: Montserrat, sans-serif;
+  color: darkgrey;
+}
+
+.register-input {
+  width: 100%;
+  background: linear-gradient(rgba(169, 169, 169, 0.6), rgba(169, 169, 169, 0.6));
+  border-style: solid;
+  border-color: transparent;
+}
+
+.registration-border {
+  padding: 1.4rem;
+}
+
+.register-main-text {
+  margin-block: unset;
+  font-size: 15pt;
+  margin-bottom: 2rem;
+}
+
+.register-p {
+  margin-block: unset;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 10pt;
+}
+
+.registration-bottom-half {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.registration-x {
+  font-size: 20pt;
+}
+
+.first-name-input-holder {
+  margin-right: 0.75rem;
+}
+
+.last-name-input-holder {
+  margin-left: 0.75rem;
+}
+
+.submit-button-holder {
+  margin-top: 1.25rem;
+}
+
+.registration-submit-button {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  font-size: 15pt;
+  font-weight: 700;
+}

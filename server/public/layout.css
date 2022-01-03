@@ -16,6 +16,14 @@
   width: 100%;
 }
 
+.top-0 {
+  top: 0;
+}
+
+.width-80p {
+  width: 80%;
+}
+
 .column-75 {
   width: 75%;
 }

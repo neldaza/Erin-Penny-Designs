@@ -4,6 +4,7 @@ import Projects from './pages/projects';
 import parseRoute from './lib/parse-route';
 import SpecificProject from './pages/specific-project';
 import AppDrawer from './pages/drawer';
+import RegisterForm from './pages/register';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -38,6 +39,9 @@ export default class App extends React.Component {
     if (route.path === 'project-details') {
       const projectId = route.params.get('projectId');
       return <SpecificProject projectId={projectId}/>;
+    }
+    if (route.path === 'register') {
+      return <RegisterForm />;
     }
   }
 
