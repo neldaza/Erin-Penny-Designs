@@ -21,7 +21,7 @@ export default class Projects extends React.Component {
         <div className="cancel-x-holder column-full">
           <a className="clean-links" href='#'><i className="fas fa-times cancel-x"></i></a>
         </div>
-        <div className="projects-holder row text-align-center width-100p">
+        <div className="projects-holder my-row text-align-center width-100p">
           <ul className="first-project-list column-half">
                 {
                   this.state.images.filter(images => images.homepage === false && images.photoId % 2 === 0 &&
@@ -60,7 +60,7 @@ export default class Projects extends React.Component {
                         );
                       })
                   }
-                  <li className="row arrow-list">
+                  <li className="my-row arrow-list">
                 <div className="column-half arrow-holder-left">
                       <i className="fas fa-chevron-left"></i>
                     </div>
