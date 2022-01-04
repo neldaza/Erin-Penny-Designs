@@ -283,6 +283,11 @@
 
   .header {
     z-index: 13;
+    justify-content: space-between;
+  }
+
+  .icons-holder {
+    width: 13%;
   }
 }
 
@@ -319,7 +324,7 @@
     bottom: 3rem;
     width: unset;
     height: unset;
-    z-index: 0;
+    z-index: 11;
   }
 
   .project-pictures {
@@ -395,6 +400,14 @@
     margin-bottom: 3rem;
     margin-block-start: 0;
   }
+
+  .login-main-text {
+    margin-top: 1.5rem;
+  }
+
+  .icons-holder {
+    width: 7.5%;
+  }
 }
 
 @media only screen and (min-device-width: 1024px)
@@ -411,6 +424,10 @@
   .registration-form {
     width: 35vw;
   }
+
+  .icons-holder {
+    width: 10%;
+  }
 }
 
 @media only screen and (min-device-width: 768px)
@@ -419,6 +436,10 @@
   .registration-form {
     width: 35vw;
   }
+
+  .icons-holder {
+    width: 10%;
+  }
 }
 
 @media only screen and (min-device-width: 375px)
@@ -426,6 +447,10 @@
   and (orientation: landscape) {
   .registration-form {
     margin-top: 11rem;
+  }
+
+  .icons-holder {
+    width: 11%;
   }
 }
 
@@ -438,5 +463,9 @@
 
   .tab-out {
     transform: translateX(60vw);
+  }
+
+  .icons-holder {
+    width: 13%;
   }
 }

@@ -48,7 +48,7 @@ export default class RegisterForm extends React.Component {
   render() {
     const { handleChange, handleSubmit } = this;
     return (
-      <div className='whole-register my-container position-fixed top-0 width-100p height-100vh flex align-items-center justify-content-center'
+      <div className='my-container whole-register position-fixed top-0 width-100p height-100vh flex align-items-center justify-content-center'
       onClick={this.homepageDrawerClose}>
         <div className="registration-form-holder my-row  align-items-center">
           <form className="registration-form" onSubmit={handleSubmit}>

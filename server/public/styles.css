@@ -186,3 +186,20 @@ a {
 .whole-register {
   overflow-y: scroll;
 }
+
+.login-border {
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.forgot-p-register {
+  font-size: 9.5pt;
+}
+
+.forgot-password-register-holder {
+  padding-top: 0.5rem;
+}
+
+.login-main-text {
+  margin-bottom: 1.5rem;
+}
