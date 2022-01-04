@@ -144,9 +144,7 @@ a {
 }
 
 .register-main-text {
-  margin-block: unset;
   font-size: 15pt;
-  margin-bottom: 2rem;
 }
 
 .register-p {
@@ -183,4 +181,8 @@ a {
   color: darkgrey;
   font-size: 15pt;
   font-weight: 700;
+}
+
+.whole-register {
+  overflow-y: scroll;
 }

@@ -41,11 +41,11 @@ export default class RegisterForm extends React.Component {
   render() {
     const { handleChange, handleSubmit } = this;
     return (
-      <div className='my-container position-fixed top-0 width-100p height-100vh flex align-items-center justify-content-center'>
-        <div className="my-row width-80p align-items-center">
+      <div className='whole-register my-container position-fixed top-0 width-100p height-100vh flex align-items-center justify-content-center'>
+        <div className="registration-form-holder my-row  align-items-center">
           <form className="registration-form" onSubmit={handleSubmit}>
             <div className="cancel-x-holder my-row">
-              <a href="#"><i className="fas fa-times registration-x"></i></a>
+              <a className="clean-links" href="#"><i className="fas fa-times registration-x"></i></a>
             </div>
             <div className="registration-border">
               <div className="column-half">
@@ -53,7 +53,7 @@ export default class RegisterForm extends React.Component {
                 <p className="register-p">Create Username</p>
                 <input className="register-input" type="text" name="username" onChange={handleChange} required />
                 <p className="register-p">Create Password</p>
-                <input className="register-input" type="text" name="password" onChange={handleChange} required />
+                <input className="register-input" type="password" name="password" onChange={handleChange} required />
               </div>
               <div className="column-half">
                 <div className="registration-bottom-half flex">
