@@ -324,7 +324,7 @@
     bottom: 3rem;
     width: unset;
     height: unset;
-    z-index: 0;
+    z-index: 11;
   }
 
   .project-pictures {
