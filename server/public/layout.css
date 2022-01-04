@@ -395,6 +395,10 @@
     margin-bottom: 3rem;
     margin-block-start: 0;
   }
+
+  .login-main-text {
+    margin-top: 1.5rem;
+  }
 }
 
 @media only screen and (min-device-width: 1024px)

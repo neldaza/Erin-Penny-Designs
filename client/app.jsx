@@ -50,7 +50,8 @@ export default class App extends React.Component {
   renderPage() {
     const { route } = this.state;
     if (route.path === 'login') {
-      return <Login action={route.path} onSignIn={this.handleSignIn} />;
+      return <Login action={route.path} onSignIn={this.handleSignIn}
+      isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer} />;
     }
     if (route.path === 'projects') {
       return <Projects />;
@@ -60,7 +61,8 @@ export default class App extends React.Component {
       return <SpecificProject projectId={projectId}/>;
     }
     if (route.path === 'register') {
-      return <RegisterForm action={route.path} isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>;
+      return <RegisterForm action={route.path} isOpen={this.state.isDrawerOpen}
+      onDrawerClick={this.openDrawer}/>;
     }
   }
 
