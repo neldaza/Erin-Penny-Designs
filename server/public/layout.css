@@ -266,6 +266,7 @@
   .registration-form-holder {
     justify-content: center;
     width: unset;
+    position: relative;
   }
 
   .registration-form {
@@ -274,6 +275,14 @@
 
   .registration-border {
     padding: 1.7rem;
+  }
+
+  .whole-register {
+    z-index: 12;
+  }
+
+  .header {
+    z-index: 13;
   }
 }
 
@@ -367,11 +376,11 @@
   .tab-out {
     transform: translateX(75vw);
     top: 0;
-    z-index: 1;
+    z-index: 12;
   }
 
   .header {
-    z-index: 2;
+    z-index: 13;
   }
 
   .registration-form {
@@ -416,7 +425,7 @@
   and (max-device-width: 812px)
   and (orientation: landscape) {
   .registration-form {
-    margin-top: 5rem;
+    margin-top: 11rem;
   }
 }
 

@@ -41,7 +41,7 @@ export default class App extends React.Component {
       return <SpecificProject projectId={projectId}/>;
     }
     if (route.path === 'register') {
-      return <RegisterForm action={route.path}/>;
+      return <RegisterForm action={route.path} isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>;
     }
   }
 
