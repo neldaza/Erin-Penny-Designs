@@ -11,7 +11,7 @@ CREATE TABLE "public"."users" (
 	"firstName" TEXT NOT NULL,
 	"lastName" TEXT NOT NULL,
 	"username" TEXT NOT NULL UNIQUE,
-	"password" TEXT NOT NULL,
+	"hashedPassword" TEXT NOT NULL,
 	"companyName" TEXT,
 	"isAdmin" BOOLEAN,
 	"phoneNumber" TEXT,
