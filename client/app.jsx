@@ -41,7 +41,7 @@ export default class App extends React.Component {
       return <SpecificProject projectId={projectId}/>;
     }
     if (route.path === 'register') {
-      return <RegisterForm />;
+      return <RegisterForm action={route.path}/>;
     }
   }
 

@@ -57,7 +57,7 @@ app.get('/api/images/:projectId', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post('/api/auth/sign-up', (req, res, next) => {
+app.post('/api/auth/register', (req, res, next) => {
   const { firstName, lastName, username, password, companyName } = req.body;
   if (!username || !password) {
     throw new ClientError(400, 'username and password are required fields');
