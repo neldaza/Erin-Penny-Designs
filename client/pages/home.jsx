@@ -50,7 +50,7 @@ export default class Home extends React.Component {
     <div className="my-container position-relative background" onClick={this.homepageDrawerClose}>
       <div className="header my-row position-fixed width-100p">
         <div className="column-75 flex align-items-center space-between">
-          <p className="home-logo">ERIN PENNY <a className="home-logo-designs">DESIGNS</a></p>
+          <p className="home-logo">PENNY <a className="home-logo-designs">DESIGNS</a></p>
         </div>
         <div className={`column-25 flex align-items-center justify-content-right ${darkTabColumn}`}>
           <i className={`fas fa-align-justify home-tab ${darkTab}`} onClick={this.handleDrawer}></i>

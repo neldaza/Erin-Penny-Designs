@@ -5,16 +5,26 @@ import parseRoute from './lib/parse-route';
 import SpecificProject from './pages/specific-project';
 import AppDrawer from './pages/drawer';
 import RegisterForm from './pages/register';
+import Login from './pages/login';
+import AppContext from './lib/app-context';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: null,
       route: parseRoute(window.location.hash),
       isDrawerOpen: 'no'
     };
     this.openDrawer = this.openDrawer.bind(this);
+    this.handleSignIn = this.handleSignIn.bind(this);
 
+  }
+
+  handleSignIn(result) {
+    const { user, token } = result;
+    window.localStorage.setItem('react-context-jwt', token);
+    this.setState({ user });
   }
 
   openDrawer() {
@@ -33,6 +43,9 @@ export default class App extends React.Component {
 
   renderPage() {
     const { route } = this.state;
+    if (route.path === 'login') {
+      return <Login action={route.path} onSignIn={this.handleSignIn} />;
+    }
     if (route.path === 'projects') {
       return <Projects />;
     }
@@ -46,13 +59,19 @@ export default class App extends React.Component {
   }
 
   render() {
+    const { user, route } = this.state;
+    const { handleSignIn } = this;
+    const contextValue = { user, route, handleSignIn };
+
     return (
     <div className="my-container position-relative">
-    <>
-    <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}/>
-    <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>
-    {this.renderPage()}
-    </>
+      <AppContext.Provider value ={contextValue}>
+        <>
+          <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}/>
+          <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>
+          {this.renderPage()}
+        </>
+      </AppContext.Provider>
     </div>
     );
   }

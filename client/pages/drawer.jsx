@@ -24,7 +24,7 @@ export default class AppDrawer extends React.Component {
         <div className="my-container">
           <div className={`my-row tab ${open}`}>
             <div className="column-full drawer-text-top">
-              <p className="index-p"><a>LOGIN</a></p>
+              <p className="index-p"><a href="#login" onClick={this.handleDrawer}>LOGIN</a></p>
               <p className="index-p"><a>ABOUT</a></p>
               <p className="index-p"><a>CONTACT</a></p>
               <p className="index-p"><a href="#projects" onClick={this.handleDrawer}>PROJECTS</a></p>

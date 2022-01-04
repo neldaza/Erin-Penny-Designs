@@ -87,7 +87,7 @@ app.post('/api/auth/register', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.post('/api/auth/log-in', (req, res, next) => {
+app.post('/api/auth/login', (req, res, next) => {
   const { username, password } = req.body;
   if (!username || !password) {
     throw new ClientError(401, 'invalid login');
