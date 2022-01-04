@@ -77,7 +77,7 @@ export default class Home extends React.Component {
           <p className="home-logo">PENNY <a className="home-logo-designs">DESIGNS</a></p>
         </div>
         <div className={`column-25 flex align-items-center
-        ${this.handleLoggedInHeaderView()} ${darkTabColumn}`}>
+        ${this.handleLoggedInHeaderView()} ${darkTabColumn} icons-holder`}>
           {this.renderPage()}
           <i className={`fas fa-align-justify home-tab ${darkTab}`} onClick={this.handleDrawer}></i>
         </div>
