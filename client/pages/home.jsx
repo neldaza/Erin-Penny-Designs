@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import AppContext from '../lib/app-context';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -11,6 +12,8 @@ export default class Home extends React.Component {
     this.handleDarkTab = this.handleDarkTab.bind(this);
     this.handleDarkTabColumn = this.handleDarkTabColumn.bind(this);
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
+    this.handleLoggedInHeaderView = this.handleLoggedInHeaderView.bind(this);
+    this.renderPage = this.renderPage.bind(this);
 
   }
 
@@ -42,6 +45,27 @@ export default class Home extends React.Component {
     if (this.props.isOpen === 'no') { return ''; }
   }
 
+  renderPage() {
+    const { user } = this.context;
+    if (user) {
+      return (
+       <React.Fragment>
+          <i className="fas fa-user home-tab"></i>
+          <i className="fab fa-facebook-messenger home-tab"></i>
+        </React.Fragment>
+      );
+    }
+  }
+
+  handleLoggedInHeaderView() {
+    const { user } = this.context;
+    if (user) {
+      return 'space-between';
+    } else {
+      return 'justify-content-right';
+    }
+  }
+
   render() {
     const darkTab = this.handleDarkTab();
     const darkTabColumn = this.handleDarkTabColumn();
@@ -52,7 +76,9 @@ export default class Home extends React.Component {
         <div className="column-75 flex align-items-center space-between">
           <p className="home-logo">PENNY <a className="home-logo-designs">DESIGNS</a></p>
         </div>
-        <div className={`column-25 flex align-items-center justify-content-right ${darkTabColumn}`}>
+        <div className={`column-25 flex align-items-center
+        ${this.handleLoggedInHeaderView()} ${darkTabColumn}`}>
+          {this.renderPage()}
           <i className={`fas fa-align-justify home-tab ${darkTab}`} onClick={this.handleDrawer}></i>
         </div>
       </div>
@@ -75,3 +101,5 @@ export default class Home extends React.Component {
     );
   }
 }
+
+Home.contextType = AppContext;

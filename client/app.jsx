@@ -7,6 +7,7 @@ import AppDrawer from './pages/drawer';
 import RegisterForm from './pages/register';
 import Login from './pages/login';
 import AppContext from './lib/app-context';
+import decodeToken from './lib/decode-token';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ export default class App extends React.Component {
     this.state = {
       user: null,
       route: parseRoute(window.location.hash),
-      isDrawerOpen: 'no'
+      isDrawerOpen: 'no',
+      isAuthorizing: true
     };
     this.openDrawer = this.openDrawer.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
@@ -39,6 +41,10 @@ export default class App extends React.Component {
     window.addEventListener('hashchange', event => {
       this.setState({ route: parseRoute(window.location.hash) });
     });
+
+    const token = window.localStorage.getItem('react-context-jwt');
+    const user = token ? decodeToken(token) : null;
+    this.setState({ user, isAuthorizing: false });
   }
 
   renderPage() {

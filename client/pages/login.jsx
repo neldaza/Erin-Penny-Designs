@@ -64,7 +64,9 @@ export default class Login extends React.Component {
                 </div>
                 <div className="forgot-password-register-holder flex space-between">
                   <p className="forgot-p-register">Forgot your Password?</p>
-                  <p className="forgot-p-register">Register</p>
+                  <a href="#register" className="clean-links">
+                    <p className="forgot-p-register">Register</p>
+                  </a>
                 </div>
               </div>
             </div>
