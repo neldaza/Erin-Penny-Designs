@@ -21,6 +21,7 @@ export default class AppDrawer extends React.Component {
   render() {
     const open = this.renderDrawer();
     return (
+        <div className="my-container">
           <div className={`my-row tab ${open}`}>
             <div className="column-full drawer-text-top">
               <p className="index-p"><a>LOGIN</a></p>
@@ -28,9 +29,10 @@ export default class AppDrawer extends React.Component {
               <p className="index-p"><a>CONTACT</a></p>
               <p className="index-p"><a href="#projects" onClick={this.handleDrawer}>PROJECTS</a></p>
               <p className="index-p"><a>REVIEWS</a></p>
-              <p className="index-p"><a>REGISTER</a></p>
+              <p className="index-p"><a href="#register" onClick={this.handleDrawer}>REGISTER</a></p>
             </div>
           </div>
+        </div>
     );
   }
 }

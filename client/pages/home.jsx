@@ -64,7 +64,7 @@ export default class Home extends React.Component {
                 return (
                    <Carousel.Item key={background.photoId}>
                      <img src={background.url} className="background my-container" />
-                 </Carousel.Item>
+                   </Carousel.Item>
                 );
               })
           }
