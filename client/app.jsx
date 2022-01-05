@@ -16,12 +16,13 @@ export default class App extends React.Component {
       user: null,
       route: parseRoute(window.location.hash),
       isDrawerOpen: 'no',
-      isAuthorizing: true
+      isAuthorizing: true,
+      isAdmin: false
     };
     this.openDrawer = this.openDrawer.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
-
+    this.handleAdmin = this.handleAdmin.bind(this);
   }
 
   handleSignOut() {
@@ -33,6 +34,9 @@ export default class App extends React.Component {
     const { user, token } = result;
     window.localStorage.setItem('react-context-jwt', token);
     this.setState({ user });
+    if (user.isAdmin === true) {
+      this.setState({ isAdmin: true });
+    }
   }
 
   openDrawer() {
@@ -41,6 +45,10 @@ export default class App extends React.Component {
     } else {
       this.setState({ isDrawerOpen: 'no' });
     }
+  }
+
+  handleAdmin() {
+    this.setState({ isAdmin: true });
   }
 
   componentDidMount() {
@@ -57,7 +65,8 @@ export default class App extends React.Component {
     const { route } = this.state;
     if (route.path === 'login') {
       return <Login action={route.path} onSignIn={this.handleSignIn}
-      isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer} />;
+      isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}
+      handleAdmin={this.handleAdmin} />;
     }
     if (route.path === 'projects') {
       return <Projects />;
@@ -81,7 +90,8 @@ export default class App extends React.Component {
     <div className="my-container position-relative">
       <AppContext.Provider value ={contextValue}>
         <>
-          <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}/>
+          <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}
+           adminLogged={this.state.isAdmin}/>
           <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>
           {this.renderPage()}
         </>
