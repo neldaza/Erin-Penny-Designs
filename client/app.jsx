@@ -22,7 +22,7 @@ export default class App extends React.Component {
     this.openDrawer = this.openDrawer.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
-    this.handleAdmin = this.handleAdmin.bind(this);
+
   }
 
   handleSignOut() {
@@ -34,9 +34,6 @@ export default class App extends React.Component {
     const { user, token } = result;
     window.localStorage.setItem('react-context-jwt', token);
     this.setState({ user });
-    if (user.isAdmin === true) {
-      this.setState({ isAdmin: true });
-    }
   }
 
   openDrawer() {
@@ -47,15 +44,10 @@ export default class App extends React.Component {
     }
   }
 
-  handleAdmin() {
-    this.setState({ isAdmin: true });
-  }
-
   componentDidMount() {
     window.addEventListener('hashchange', event => {
       this.setState({ route: parseRoute(window.location.hash) });
     });
-
     const token = window.localStorage.getItem('react-context-jwt');
     const user = token ? decodeToken(token) : null;
     this.setState({ user, isAuthorizing: false });

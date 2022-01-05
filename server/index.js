@@ -113,10 +113,10 @@ app.post('/api/auth/login', (req, res, next) => {
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');
           }
-          if (username === 'admin') {
+          if (isAdmin === true) {
             const adminPayload = { userId, username, isAdmin };
-            const adminToken = jwt.sign(adminPayload, process.env.ADMIN_SECRET);
-            res.json({ adminToken, adminPayload });
+            const token = jwt.sign(adminPayload, process.env.ADMIN_SECRET);
+            res.json({ token, user: adminPayload });
             return;
           }
           const payload = { userId, username };

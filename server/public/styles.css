@@ -203,3 +203,8 @@ a {
 .login-main-text {
   margin-bottom: 1.5rem;
 }
+
+.admin-icon {
+  color: yellow;
+  opacity: 1;
+}
