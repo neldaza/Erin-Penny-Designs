@@ -20,7 +20,13 @@ export default class App extends React.Component {
     };
     this.openDrawer = this.openDrawer.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
+    this.handleSignOut = this.handleSignOut.bind(this);
 
+  }
+
+  handleSignOut() {
+    window.localStorage.removeItem('react-context-jwt');
+    this.setState({ user: null });
   }
 
   handleSignIn(result) {
@@ -68,8 +74,8 @@ export default class App extends React.Component {
 
   render() {
     const { user, route } = this.state;
-    const { handleSignIn } = this;
-    const contextValue = { user, route, handleSignIn };
+    const { handleSignIn, handleSignOut } = this;
+    const contextValue = { user, route, handleSignIn, handleSignOut };
 
     return (
     <div className="my-container position-relative">
