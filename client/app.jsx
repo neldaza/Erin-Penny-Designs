@@ -16,7 +16,8 @@ export default class App extends React.Component {
       user: null,
       route: parseRoute(window.location.hash),
       isDrawerOpen: 'no',
-      isAuthorizing: true
+      isAuthorizing: true,
+      isAdmin: false
     };
     this.openDrawer = this.openDrawer.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
@@ -47,7 +48,6 @@ export default class App extends React.Component {
     window.addEventListener('hashchange', event => {
       this.setState({ route: parseRoute(window.location.hash) });
     });
-
     const token = window.localStorage.getItem('react-context-jwt');
     const user = token ? decodeToken(token) : null;
     this.setState({ user, isAuthorizing: false });
@@ -57,7 +57,8 @@ export default class App extends React.Component {
     const { route } = this.state;
     if (route.path === 'login') {
       return <Login action={route.path} onSignIn={this.handleSignIn}
-      isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer} />;
+      isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}
+      handleAdmin={this.handleAdmin} />;
     }
     if (route.path === 'projects') {
       return <Projects />;
@@ -81,7 +82,8 @@ export default class App extends React.Component {
     <div className="my-container position-relative">
       <AppContext.Provider value ={contextValue}>
         <>
-          <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}/>
+          <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}
+           adminLogged={this.state.isAdmin}/>
           <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>
           {this.renderPage()}
         </>

@@ -94,7 +94,8 @@ app.post('/api/auth/login', (req, res, next) => {
   }
   const sql = `
     select "userId",
-           "hashedPassword"
+           "hashedPassword",
+           "isAdmin"
       from "users"
      where "username" = $1
   `;
@@ -105,16 +106,23 @@ app.post('/api/auth/login', (req, res, next) => {
       if (!user) {
         throw new ClientError(401, 'invalid login');
       }
-      const { userId, hashedPassword } = user;
+      const { userId, hashedPassword, isAdmin } = user;
       return argon2
         .verify(hashedPassword, password)
         .then(isMatching => {
           if (!isMatching) {
             throw new ClientError(401, 'invalid login');
           }
+          if (isAdmin === true) {
+            const adminPayload = { userId, username, isAdmin };
+            const token = jwt.sign(adminPayload, process.env.ADMIN_SECRET);
+            res.json({ token, user: adminPayload });
+            return;
+          }
           const payload = { userId, username };
           const token = jwt.sign(payload, process.env.TOKEN_SECRET);
           res.json({ token, user: payload });
+
         });
     })
     .catch(err => next(err));

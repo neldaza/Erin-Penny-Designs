@@ -14,6 +14,7 @@ export default class Home extends React.Component {
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
     this.handleLoggedInHeaderView = this.handleLoggedInHeaderView.bind(this);
     this.renderPage = this.renderPage.bind(this);
+    this.renderAdmin = this.renderAdmin.bind(this);
 
   }
 
@@ -50,11 +51,16 @@ export default class Home extends React.Component {
     if (user) {
       return (
        <React.Fragment>
-          <i className="fas fa-user home-tab"></i>
+          <i className={`fas fa-user home-tab ${this.renderAdmin()}`}></i>
           <i className="fab fa-facebook-messenger home-tab"></i>
         </React.Fragment>
       );
     }
+  }
+
+  renderAdmin() {
+    const { user } = this.context;
+    if (user.isAdmin === true) { return 'admin-icon'; }
   }
 
   handleLoggedInHeaderView() {
@@ -69,6 +75,7 @@ export default class Home extends React.Component {
   render() {
     const darkTab = this.handleDarkTab();
     const darkTabColumn = this.handleDarkTabColumn();
+
     return (
       <>
     <div className="my-container position-relative background" onClick={this.homepageDrawerClose}>
