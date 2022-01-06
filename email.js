@@ -1,18 +1,18 @@
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'outlook',
   auth: {
-    user: 'pennydesignstest@gmail.com',
-    pass: 'pennytest1!'
+    user: 'pennydesignstest@outlook.com',
+    pass: 'pennytests1!'
   }
 });
 
 const options = {
-  from: 'pennydesignstest@gmail.com',
+  from: 'pennydesignstest@outlook.com',
   to: '5166600764@tmomail.net',
   subject: 'test',
-  text: 'it works'
+  text: 'I sent this from your website :-)'
 };
 
 transporter.sendMail(options, (err, info) => {
