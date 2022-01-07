@@ -32,7 +32,7 @@ export default class AppDrawer extends React.Component {
     if (user) {
       return (
         <React.Fragment>
-          <p className="index-p"><a>MESSAGES</a></p>
+          <p className="index-p"><a>EMAIL</a></p>
           <p className="index-p"><a>ABOUT</a></p>
           <p className="index-p"><a>CONTACT</a></p>
           <p className="index-p"><a href="#projects"

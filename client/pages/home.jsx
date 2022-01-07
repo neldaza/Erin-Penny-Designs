@@ -52,7 +52,7 @@ export default class Home extends React.Component {
       return (
        <React.Fragment>
           <i className={`fas fa-user home-tab ${this.renderAdmin()}`}></i>
-          <i className="fab fa-facebook-messenger home-tab"></i>
+          <i className="fas fa-envelope home-tab"></i>
         </React.Fragment>
       );
     }

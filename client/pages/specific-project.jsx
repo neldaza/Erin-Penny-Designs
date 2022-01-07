@@ -49,7 +49,7 @@ export default class SpecificProject extends React.Component {
                   })
               }
               <div className="gallery-footer text-align-right transparent-borders">
-                <h2><a href="#" className="gallery-footer-text">Back To Projects</a></h2>
+                <h2><a href="#projects" className="gallery-footer-text">Back To Projects</a></h2>
               </div>
           </div>
         </div>
