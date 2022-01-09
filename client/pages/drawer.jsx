@@ -34,7 +34,7 @@ export default class AppDrawer extends React.Component {
         <React.Fragment>
           <p className="index-p"><a>EMAIL</a></p>
           <p className="index-p"><a>ABOUT</a></p>
-          <p className="index-p"><a>CONTACT</a></p>
+          <p className="index-p"><a href="#contact">CONTACT</a></p>
           <p className="index-p"><a href="#projects"
             onClick={this.handleDrawer}>PROJECTS</a></p>
           <p className="index-p"><a>REVIEWS</a></p>
@@ -49,7 +49,7 @@ export default class AppDrawer extends React.Component {
         <p className="index-p"><a href="#login"
           onClick={this.handleDrawer}>LOGIN</a></p>
         <p className="index-p"><a>ABOUT</a></p>
-        <p className="index-p"><a>CONTACT</a></p>
+        <p className="index-p"><a href="#contact">CONTACT</a></p>
         <p className="index-p"><a href="#projects"
           onClick={this.handleDrawer}>PROJECTS</a></p>
         <p className="index-p"><a>REVIEWS</a></p>

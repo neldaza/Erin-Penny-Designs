@@ -25,11 +25,11 @@ CREATE TABLE "public"."users" (
 
 CREATE TABLE "public"."photos" (
 	"photoId" serial NOT NULL,
-	"projectId" int NOT NULL,
+	"projectId" int,
 	"url" TEXT NOT NULL,
-	"createdAt" timestamp with time zone NOT NULL,
-  "homepage" BOOLEAN NOT NULL,
-  "specific" BOOLEAN NOT NULL,
+	"createdAt" timestamp with time zone,
+  "homepage" BOOLEAN,
+  "specific" BOOLEAN,
 	CONSTRAINT "photos_pk" PRIMARY KEY ("photoId")
 ) WITH (
   OIDS=FALSE
@@ -49,20 +49,6 @@ CREATE TABLE "public"."reviews" (
 );
 
 
-
-CREATE TABLE "public"."messages" (
-	"messageId" serial NOT NULL,
-	"senderId" int NOT NULL,
-	"recipientId" int NOT NULL,
-	"content" TEXT NOT NULL,
-	"createdAt" timestamp with time zone NOT NULL,
-	CONSTRAINT "messages_pk" PRIMARY KEY ("messageId")
-) WITH (
-  OIDS=FALSE
-);
-
-
-
 CREATE TABLE "public"."projects" (
 	"projectId" serial NOT NULL,
 	"name" TEXT NOT NULL,
@@ -73,10 +59,6 @@ CREATE TABLE "public"."projects" (
 
 
 
-
 ALTER TABLE "photos" ADD CONSTRAINT "photos_fk0" FOREIGN KEY ("projectId") REFERENCES "projects"("projectId");
 
 ALTER TABLE "reviews" ADD CONSTRAINT "reviews_fk0" FOREIGN KEY ("userId") REFERENCES "users"("userId");
-
-ALTER TABLE "messages" ADD CONSTRAINT "messages_fk0" FOREIGN KEY ("senderId") REFERENCES "users"("userId");
-ALTER TABLE "messages" ADD CONSTRAINT "messages_fk1" FOREIGN KEY ("recipientId") REFERENCES "users"("userId");

@@ -308,4 +308,10 @@ values (
   now(),
   FALSE,
   TRUE
-  );
+  ),  (
+    null,
+    '/images/logo.png',
+    now(),
+    null,
+    null
+  )
