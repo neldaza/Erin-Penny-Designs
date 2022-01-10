@@ -234,6 +234,12 @@
   width: 80%;
 }
 
+.contact-logo-image {
+  object-fit: contain;
+  width: 65vw;
+  height: 65vw;
+}
+
 @media screen and (min-width: 500px) {
   .my-container {
     width: 100%;
@@ -243,6 +249,7 @@
   .projects-opacity {
     top: 0;
     overflow-y: scroll;
+    z-index: 14;
   }
 
   .background {
@@ -265,6 +272,7 @@
     transform: translateX(70vw);
     top: 0;
     overflow-y: scroll;
+    z-index: 12;
   }
 
   .registration-form-holder {
@@ -292,6 +300,31 @@
 
   .icons-holder {
     width: 13%;
+  }
+
+  .contact-logo-image {
+    object-fit: contain;
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .contact-opacity {
+    top: 5rem;
+    left: 5rem;
+    right: 5rem;
+    bottom: 5rem;
+    width: unset;
+    height: unset;
+    z-index: 11;
+  }
+
+  .contact-text-holder {
+    width: 60%;
+  }
+
+  .media-align-center {
+    position: relative;
+    top: 4rem;
   }
 }
 

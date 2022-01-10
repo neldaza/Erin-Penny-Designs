@@ -60,17 +60,18 @@ app.get('/api/images/:projectId', (req, res, next) => {
     .catch(err => next(err));
 });
 
-app.get('/api/images/logo/:photoId', (req, res, next) => {
+app.get('/api/images/specific/:photoId', (req, res, next) => {
   const photoId = Number(req.params.photoId);
   const sql = `
-      select   "url"
+      select   "url",
+               "photoId"
         from   "photos"
        where   "photoId" = $1
        `;
   const get = [photoId];
   db.query(sql, get)
     .then(result => {
-      res.json(result.rows[0]);
+      res.json(result.rows);
     })
     .catch(err => next(err));
 });
