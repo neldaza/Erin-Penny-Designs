@@ -16,9 +16,26 @@ export default class Contact extends React.Component {
 
   render() {
     return (
-    <div className='projects-opacity position-fixed justify-content-center flex-wrap-wrapped'>
+    <div className='my-container projects-opacity position-fixed justify-content-center flex-wrap-wrapped'>
       <div className="cancel-x-holder column-full">
         <a className="clean-links" href="#"><i className="fas fa-times cancel-x"></i></a>
+      </div>
+      <div className="my-row height-100p ">
+        <div className="column-half">
+          {
+            this.state.images.filter(images => images.url === '/images/logo.png')
+              .map(logo => {
+                return (
+                  <React.Fragment key={logo.photoId}>
+                    <img src={logo.url} className='specific-gallery-image' />
+                  </React.Fragment>
+                );
+              })
+          }
+        </div>
+        <div className="column-half">
+
+        </div>
       </div>
     </div>
     );

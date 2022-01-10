@@ -60,6 +60,21 @@ app.get('/api/images/:projectId', (req, res, next) => {
     .catch(err => next(err));
 });
 
+app.get('/api/images/logo/:photoId', (req, res, next) => {
+  const photoId = Number(req.params.photoId);
+  const sql = `
+      select   "url"
+        from   "photos"
+       where   "photoId" = $1
+       `;
+  const get = [photoId];
+  db.query(sql, get)
+    .then(result => {
+      res.json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
 app.post('/api/send', (req, res, next) => {
   const { subject, body } = req.body;
   if (!body || !subject) {
