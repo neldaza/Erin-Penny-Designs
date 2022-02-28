@@ -77,7 +77,7 @@ export default class RegisterForm extends React.Component {
                 <p className="register-p">Registered Company Name</p>
                 <input className="register-input" type="text" name="companyName" onChange={handleChange} />
               </div>
-              <div className="submit-button-holder flex justify-content-right">
+              <div className="submit-button-holder text-align-right">
                 <button className="registration-submit-button" type="submit">SUBMIT</button>
               </div>
             </div>
