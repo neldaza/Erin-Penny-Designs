@@ -66,7 +66,7 @@ export default class Login extends React.Component {
                 onChange={handleChange} required />
               </div>
               <div className="column-half">
-                <div className="submit-button-holder flex justify-content-right">
+                <div className="submit-button-holder width-100p text-align-right">
                   <button className="registration-submit-button" type="submit">LOG IN</button>
                 </div>
                 <div className="forgot-password-register-holder flex space-between">

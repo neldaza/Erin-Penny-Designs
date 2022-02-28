@@ -189,6 +189,7 @@ i {
   color: darkgrey;
   font-size: 15pt;
   font-weight: 700;
+  padding: 0;
 }
 
 .whole-register {
