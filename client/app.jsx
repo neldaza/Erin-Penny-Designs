@@ -79,7 +79,7 @@ export default class App extends React.Component {
     const contextValue = { user, route, handleSignIn, handleSignOut };
 
     return (
-    <div className="my-container position-relative">
+    <div className="my-container">
       <AppContext.Provider value ={contextValue}>
         <>
           <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}
