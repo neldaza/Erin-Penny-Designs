@@ -4,6 +4,14 @@ a {
   cursor: pointer;
 }
 
+button {
+  cursor: pointer;
+}
+
+i {
+  cursor: pointer;
+}
+
 .background {
   height: 100vh;
   object-fit: cover;

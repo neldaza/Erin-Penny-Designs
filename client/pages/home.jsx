@@ -80,13 +80,13 @@ export default class Home extends React.Component {
       <>
     <div className="my-container position-relative background" onClick={this.homepageDrawerClose}>
       <div className="header my-row position-fixed width-100p">
-        <div className="column-75 flex align-items-center space-between">
-          <p className="home-logo">PENNY <a className="home-logo-designs">DESIGNS</a></p>
-        </div>
-        <div className={`column-25 flex align-items-center
-        ${this.handleLoggedInHeaderView()} ${darkTabColumn} icons-holder`}>
-          {this.renderPage()}
-          <i className={`fas fa-align-justify home-tab ${darkTab}`} onClick={this.handleDrawer}></i>
+        <div className="column-full flex align-items-center space-between">
+          <a href='#'><p className="home-logo">PENNY <span className="home-logo-designs">DESIGNS</span></p></a>
+            <div className={`
+            ${this.handleLoggedInHeaderView()} ${darkTabColumn} icons-holder`}>
+              {this.renderPage()}
+              <i className={`fas fa-align-justify home-tab ${darkTab}`} onClick={this.handleDrawer}></i>
+            </div>
         </div>
       </div>
         {

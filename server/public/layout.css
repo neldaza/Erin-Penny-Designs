@@ -230,7 +230,7 @@
   width: 80%;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 768px) {
   .my-container {
     width: 100%;
     max-width: unset;
@@ -291,7 +291,7 @@
   }
 }
 
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1280px) {
   .my-container {
     width: 100%;
     max-width: unset;
@@ -410,7 +410,7 @@
   }
 }
 
-@media only screen and (min-device-width: 1024px)
+/* @media only screen and (min-device-width: 1024px)
   and (max-device-width: 1366px)
   and (orientation: landscape) {
   .projects-holder {
@@ -468,4 +468,4 @@
   .icons-holder {
     width: 13%;
   }
-}
+} */
