@@ -68,7 +68,7 @@ export default class Home extends React.Component {
     if (user) {
       return 'space-between';
     } else {
-      return 'justify-content-right';
+      return 'text-align-right';
     }
   }
 

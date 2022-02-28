@@ -241,10 +241,6 @@
     overflow-y: scroll;
   }
 
-  .background {
-    width: 100%;
-  }
-
   .projects-holder {
     margin-top: 0;
   }
@@ -295,10 +291,6 @@
   .my-container {
     width: 100%;
     max-width: unset;
-  }
-
-  .background {
-    width: 100%;
   }
 
   .first-project-list,
