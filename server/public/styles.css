@@ -32,9 +32,8 @@ i {
   font-weight: 700;
 }
 
-.home-tab {
+.home-index-icon {
   font-size: 19pt;
-  opacity: 0.38;
 }
 
 .projects-opacity {
@@ -116,8 +115,6 @@ i {
 }
 
 .open-tab {
-  opacity: 1;
-  position: relative;
   color: darkgrey;
 }
 

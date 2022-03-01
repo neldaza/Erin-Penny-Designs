@@ -78,31 +78,34 @@ export default class Home extends React.Component {
 
     return (
       <>
-    <div className="my-container position-fixed background" onClick={this.homepageDrawerClose}>
-      <div className="header my-row position-fixed width-100p">
-        <div className="column-full flex align-items-center space-between">
-          <a href='#'><p className="home-logo">PENNY <span className="home-logo-designs">DESIGNS</span></p></a>
-            <div className={`
-            ${this.handleLoggedInHeaderView()} ${darkTabColumn} icons-holder`}>
-              {this.renderPage()}
-              <i className={`fas fa-align-justify home-tab ${darkTab}`} onClick={this.handleDrawer}></i>
+      <div className='my-container'>
+        <header className="header my-row width-100p position-fixed">
+          <div className="column-full flex align-items-center space-between">
+            <a href='#' onClick={this.homepageDrawerClose}>
+              <p className="home-logo">PENNY <span className="home-logo-designs">DESIGNS</span></p>
+            </a>
+            <div className={`${this.handleLoggedInHeaderView()} ${darkTabColumn} icons-holder`}>
+            {this.renderPage()}
+              <i className={`fas fa-align-justify home-index-icon ${darkTab}`} onClick={this.handleDrawer}></i>
             </div>
-        </div>
-      </div>
-        {
-          <Carousel controls={true} indicators={false} fade={true} interval={5000}>
+          </div>
+        </header>
+        <div className='bootstrap-carousel width-100p position-fixed' onClick={this.homepageDrawerClose}>
           {
-            this.state.images.filter(images => images.homepage === true)
-              .map(background => {
-                return (
-                   <Carousel.Item key={background.photoId}>
-                     <img src={background.url} className="background my-container" />
-                   </Carousel.Item>
-                );
-              })
+            <Carousel controls={true} indicators={false} fade={true} interval={5000}>
+            {
+              this.state.images.filter(images => images.homepage === true)
+                .map(background => {
+                  return (
+                     <Carousel.Item key={background.photoId}>
+                       <img src={background.url} className="background" />
+                     </Carousel.Item>
+                  );
+                })
+            }
+            </Carousel>
           }
-          </Carousel>
-        }
+        </div>
       </div>
       </>
     );
