@@ -48,8 +48,8 @@ export default class Login extends React.Component {
   render() {
     const { handleChange, handleSubmit } = this;
     return (
-      <div className="my-container whole-register position-fixed top-0 whole-login width-100p
-      height-100vh flex align-items-center justify-content-center" onClick={this.homepageDrawerClose}>
+      <div className="my-container whole-register position-fixed top-25 whole-login width-80p
+       flex align-items-center justify-content-center" onClick={this.homepageDrawerClose}>
         <div className="registration-form-holder my-row align-items-center">
           <form className="registration-form width-100p" onSubmit={handleSubmit}>
             <div className="cancel-x-holder my-row">
