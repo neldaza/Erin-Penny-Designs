@@ -391,10 +391,6 @@
     top: 0;
   }
 
-  .registration-form {
-    width: 25vw;
-  }
-
   .registration-border {
     padding: 1.7rem;
   }
@@ -410,5 +406,9 @@
 
   .icons-holder {
     width: 7.5%;
+  }
+
+  .registration-form-holder {
+    width: 20%;
   }
 }
