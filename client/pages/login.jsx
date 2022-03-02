@@ -50,7 +50,7 @@ export default class Login extends React.Component {
     return (
       <div className="my-container whole-register whole-login
        flex align-items-center justify-content-center" onClick={this.homepageDrawerClose}>
-        <div className="login-holder registration-form-holder position-fixed top-20 my-row align-items-center">
+        <div className="login-holder registration-form-holder position-absolute top-20 my-row align-items-center">
           <form className="registration-form width-100p" onSubmit={handleSubmit}>
             <div className="cancel-x-holder my-row">
               <a className="clean-links" href="#"><i className="fas fa-times registration-x"></i></a>
