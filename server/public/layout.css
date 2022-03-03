@@ -258,6 +258,10 @@
   top: 20%;
 }
 
+.message-and-user-icon {
+  padding-right: 5px;
+}
+
 @media screen and (min-width: 650px) {
   .my-container {
     width: 100%;
@@ -414,5 +418,9 @@
 
   .registration-form-holder {
     width: 20vw;
+  }
+
+  .message-and-user-icon {
+    padding-right: 7.5px;
   }
 }

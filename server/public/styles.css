@@ -231,3 +231,7 @@ i {
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
+
+.message-and-user-icon {
+  font-size: 19pt;
+}

@@ -51,8 +51,8 @@ export default class Home extends React.Component {
     if (user) {
       return (
        <React.Fragment>
-          <i className={`fas fa-user home-tab ${this.renderAdmin()}`}></i>
-          <i className="fab fa-facebook-messenger home-tab"></i>
+          <i className={`fas fa-user message-and-user-icon ${this.renderAdmin()}`}></i>
+          <i className="fab fa-facebook-messenger message-and-user-icon"></i>
         </React.Fragment>
       );
     }
@@ -66,7 +66,7 @@ export default class Home extends React.Component {
   handleLoggedInHeaderView() {
     const { user } = this.context;
     if (user) {
-      return 'space-between';
+      return 'flex align-items-center';
     } else {
       return 'text-align-right';
     }
