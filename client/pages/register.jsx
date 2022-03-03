@@ -8,16 +8,26 @@ export default class RegisterForm extends React.Component {
       lastName: '',
       username: '',
       password: '',
-      companyName: ''
+      companyName: '',
+      registration: 'pending'
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
+    this.handleBadRegister = this.handleBadRegister.bind(this);
+  }
+
+  handleBadRegister() {
+    if (this.state.registration === 'failed') { return 'view'; }
+    if (this.state.registration !== 'failed') { return 'visibility-hidden'; }
   }
 
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({
+      [name]: value,
+      registration: 'pending'
+    });
   }
 
   homepageDrawerClose(event) {
@@ -39,7 +49,17 @@ export default class RegisterForm extends React.Component {
     fetch(`/api/auth/${action}`, req)
       .then(res => res.json())
       .then(result => {
-        if (action === 'register') {
+        if (result.error) {
+          this.setState({
+            firstName: '',
+            lastName: '',
+            username: '',
+            password: '',
+            companyName: '',
+            registration: 'failed'
+          });
+        } else if (action === 'register') {
+          this.setState({ registration: 'success' });
           window.location.hash = '#';
         }
       });
@@ -47,6 +67,8 @@ export default class RegisterForm extends React.Component {
 
   render() {
     const { handleChange, handleSubmit } = this;
+    const badRegistration = this.handleBadRegister();
+
     return (
       <div className='my-container whole-register width-80p flex align-items-center justify-content-center'
       onClick={this.homepageDrawerClose}>
@@ -60,6 +82,7 @@ export default class RegisterForm extends React.Component {
                 <h3 className="register-main-text">REGISTER</h3>
                 <p className="register-p">Create Username</p>
                 <input className="register-input" type="text" name="username" onChange={handleChange} required />
+                <p className={`username-taken ${badRegistration}`}>Username already taken</p>
                 <p className="register-p">Create Password</p>
                 <input className="register-input" type="password" name="password" onChange={handleChange} required />
               </div>

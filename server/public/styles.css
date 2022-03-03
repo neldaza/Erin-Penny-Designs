@@ -221,4 +221,13 @@ i {
 .bad-login {
   font-size: 10pt;
   margin-block-end: unset;
+  font-weight: 700;
+}
+
+.username-taken {
+  font-size: 10pt;
+  margin-block: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }

@@ -69,11 +69,15 @@ app.post('/api/auth/register', (req, res, next) => {
       const sql = `
     insert into "users" ("firstName", "lastName", "username", "hashedPassword", "companyName")
     values ($1, $2, $3, $4, $5)
+    ON CONFLICT ("username") DO NOTHING
     returning *;
     `;
       const post = [firstName, lastName, username, result, companyName];
       db.query(sql, post)
         .then(result => {
+          if (!result.rows[0]) {
+            throw new ClientError(401, 'username already taken');
+          }
           res.status(201);
           const resultObject = result.rows[0];
           const emptyObject = {};
