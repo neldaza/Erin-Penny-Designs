@@ -5,11 +5,20 @@ export default class Login extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      logIn: null
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
+    this.handleBadLogin = this.handleBadLogin.bind(this);
+
+  }
+
+  handleBadLogin() {
+    if (this.state.logIn === 'failed') { return 'view'; }
+    if (this.state.logIn !== 'failed') { return 'visibility-hidden'; }
+
   }
 
   homepageDrawerClose(event) {
@@ -20,7 +29,10 @@ export default class Login extends React.Component {
 
   handleChange(event) {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({
+      [name]: value,
+      logIn: 'pending'
+    });
   }
 
   handleSubmit(event) {
@@ -36,17 +48,20 @@ export default class Login extends React.Component {
     fetch(`/api/auth/${action}`, req)
       .then(res => res.json())
       .then(result => {
-        if (action === 'login') {
-          window.location.hash = '#';
-        }
         if (result.user && result.token) {
           this.props.onSignIn(result);
+          this.setState({ logIn: 'success' });
+          window.location.hash = '#';
+        } else {
+          this.setState({ username: '', password: '', logIn: 'failed' });
         }
       });
   }
 
   render() {
     const { handleChange, handleSubmit } = this;
+    const badLogIn = this.handleBadLogin();
+
     return (
       <div className="my-container whole-register whole-login
        flex align-items-center justify-content-center" onClick={this.homepageDrawerClose}>
@@ -64,6 +79,7 @@ export default class Login extends React.Component {
                 <p className="register-p">Password</p>
                 <input className="register-input" type="password" name="password"
                 onChange={handleChange} required />
+                <p className={`${badLogIn} bad-login`}>Invalid Login</p>
               </div>
               <div className="column-half">
                 <div className="submit-button-holder width-100p text-align-right">

@@ -2,8 +2,12 @@
   display: none !important;
 }
 
+.visibility-hidden {
+  visibility: hidden;
+}
+
 .my-container {
-  max-width: 575px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -214,7 +218,7 @@
 }
 
 .registration-form-holder {
-  width: 80%;
+  width: 80vw;
   z-index: 0;
 }
 
@@ -254,7 +258,7 @@
   top: 20%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
   .my-container {
     width: 100%;
     max-width: 100%;
@@ -265,7 +269,7 @@
   }
 
   .registration-form-holder {
-    width: 45%;
+    width: 40vw;
   }
 
   .projects-opacity {
@@ -409,6 +413,6 @@
   }
 
   .registration-form-holder {
-    width: 20%;
+    width: 20vw;
   }
 }

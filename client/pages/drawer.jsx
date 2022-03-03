@@ -32,13 +32,8 @@ export default class AppDrawer extends React.Component {
     if (user) {
       return (
         <React.Fragment>
-          <p className="index-p"><a>MESSAGES</a></p>
-          <p className="index-p"><a>ABOUT</a></p>
-          <p className="index-p"><a>CONTACT</a></p>
           <p className="index-p"><a href="#projects"
             onClick={this.handleDrawer}>PROJECTS</a></p>
-          <p className="index-p"><a>REVIEWS</a></p>
-          <p className="index-p"><a>MY ACCOUNT</a></p>
           <p className="index-p"><a href="#"
             onClick={this.signOut}>LOG OUT</a></p>
         </React.Fragment>
@@ -48,11 +43,8 @@ export default class AppDrawer extends React.Component {
       <React.Fragment>
         <p className="index-p"><a href="#login"
           onClick={this.handleDrawer}>LOGIN</a></p>
-        <p className="index-p"><a>ABOUT</a></p>
-        <p className="index-p"><a>CONTACT</a></p>
         <p className="index-p"><a href="#projects"
           onClick={this.handleDrawer}>PROJECTS</a></p>
-        <p className="index-p"><a>REVIEWS</a></p>
         <p className="index-p"><a href="#register"
           onClick={this.handleDrawer}>REGISTER</a></p>
       </React.Fragment>
