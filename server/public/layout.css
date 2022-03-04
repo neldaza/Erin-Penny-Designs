@@ -341,6 +341,15 @@
     bottom: 3rem;
     width: unset;
     height: unset;
+    z-index: 1;
+  }
+
+  .header {
+    z-index: 3;
+  }
+
+  .tab {
+    z-index: 2;
   }
 
   .project-pictures {
