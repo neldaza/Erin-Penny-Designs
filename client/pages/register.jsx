@@ -16,6 +16,8 @@ export default class RegisterForm extends React.Component {
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
     this.handleBadRegister = this.handleBadRegister.bind(this);
     this.handleBadRegisterMessage = this.handleBadRegisterMessage.bind(this);
+    this.handleHideRegister = this.handleHideRegister.bind(this);
+    this.handleViewSuccess = this.handleViewSuccess.bind(this);
   }
 
   handleBadRegister() {
@@ -35,6 +37,16 @@ export default class RegisterForm extends React.Component {
       return 'Bad Request, please check your internet connection';
     }
     return 'Username already taken';
+  }
+
+  handleHideRegister() {
+    if (this.state.registration === 'success') { return 'hidden'; }
+    return 'view';
+  }
+
+  handleViewSuccess() {
+    if (this.state.registration === 'success') { return 'view'; }
+    return 'hidden';
   }
 
   handleChange(event) {
@@ -84,7 +96,7 @@ export default class RegisterForm extends React.Component {
           });
         } else if (action === 'register') {
           this.setState({ registration: 'success' });
-          window.location.hash = '#';
+          window.location.hash = '#registration-successful';
         }
       });
   }
@@ -95,7 +107,8 @@ export default class RegisterForm extends React.Component {
     const badRegistrationMessage = this.handleBadRegisterMessage();
 
     return (
-      <div className='my-container whole-register width-80p flex align-items-center justify-content-center'
+      <>
+        <div className='my-container whole-register width-80p flex align-items-center justify-content-center'
       onClick={this.homepageDrawerClose}>
         <div className="registration-form-holder position-absolute top-20 my-row  align-items-center">
           <form className="registration-form" onSubmit={handleSubmit}>
@@ -132,6 +145,7 @@ export default class RegisterForm extends React.Component {
           </form>
         </div>
       </div>
+      </>
     );
   }
 }
