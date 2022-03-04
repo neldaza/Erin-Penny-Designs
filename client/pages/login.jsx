@@ -4,21 +4,34 @@ export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
-      logIn: null
+      username: 'admin',
+      password: 'admin',
+      logIn: 'pending'
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
     this.handleBadLogin = this.handleBadLogin.bind(this);
+    this.handleBadLoginMessage = this.handleBadLoginMessage.bind(this);
 
   }
 
   handleBadLogin() {
-    if (this.state.logIn === 'failed') { return 'view'; }
-    if (this.state.logIn !== 'failed') { return 'visibility-hidden'; }
+    if (this.state.logIn === 'failed') {
+      return 'view';
+    } else if (this.state.logIn === 'connection failed') {
+      return 'view';
+    } else if (this.state.logIn === 'pending') {
+      return 'visibility-hidden';
+    } else if (this.state.logIn === 'success') {
+      return 'visibility-hidden';
+    }
+  }
 
+  handleBadLoginMessage() {
+    if (this.state.logIn === 'failed') { return 'Invalid Login'; }
+    if (this.state.logIn === 'connection failed') { return 'Bad Request, please check your internet connection'; }
+    return 'Invalid Login';
   }
 
   homepageDrawerClose(event) {
@@ -52,6 +65,8 @@ export default class Login extends React.Component {
           this.props.onSignIn(result);
           this.setState({ logIn: 'success' });
           window.location.hash = '#';
+        } else if (result.error === 'an unexpected error occurred') {
+          this.setState({ username: this.state.username, password: this.state.password, logIn: 'connection failed' });
         } else {
           this.setState({ username: this.state.username, password: this.state.password, logIn: 'failed' });
         }
@@ -61,6 +76,7 @@ export default class Login extends React.Component {
   render() {
     const { handleChange, handleSubmit } = this;
     const badLogIn = this.handleBadLogin();
+    const badLogInMessage = this.handleBadLoginMessage();
 
     return (
       <div className="my-container whole-register whole-login
@@ -75,11 +91,13 @@ export default class Login extends React.Component {
                 <h3 className="login-main-text register-main-text">LOGIN</h3>
                 <p className="register-p">Username</p>
                 <input className="register-input" type="text"
-                onChange={handleChange} name="username"required />
+                onChange={handleChange} name="username" required value="admin"/>
                 <p className="register-p">Password</p>
                 <input className="register-input" type="password" name="password"
-                onChange={handleChange} required />
-                <p className={`${badLogIn} bad-login`}>Invalid Login</p>
+                onChange={handleChange} required value="admin"/>
+                <p className={`${badLogIn} bad-login`}>
+                  {badLogInMessage}
+                </p>
               </div>
               <div className="column-half">
                 <div className="submit-button-holder width-100p text-align-right">
