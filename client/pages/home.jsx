@@ -12,7 +12,6 @@ export default class Home extends React.Component {
     this.handleDarkTab = this.handleDarkTab.bind(this);
     this.handleDarkTabColumn = this.handleDarkTabColumn.bind(this);
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
-    this.handleLoggedInHeaderView = this.handleLoggedInHeaderView.bind(this);
     this.renderPage = this.renderPage.bind(this);
     this.renderAdmin = this.renderAdmin.bind(this);
 
@@ -50,10 +49,9 @@ export default class Home extends React.Component {
     const { user } = this.context;
     if (user) {
       return (
-       <React.Fragment>
-          <i className={`fas fa-user message-and-user-icon ${this.renderAdmin()}`}></i>
-          <i className="fab fa-facebook-messenger message-and-user-icon"></i>
-        </React.Fragment>
+      <React.Fragment>
+        <i className={`fas fa-user message-and-user-icon ${this.renderAdmin()}`}></i>
+      </React.Fragment>
       );
     }
   }
@@ -61,15 +59,6 @@ export default class Home extends React.Component {
   renderAdmin() {
     const { user } = this.context;
     if (user.isAdmin === true) { return 'admin-icon'; }
-  }
-
-  handleLoggedInHeaderView() {
-    const { user } = this.context;
-    if (user) {
-      return 'flex align-items-center';
-    } else {
-      return 'text-align-right';
-    }
   }
 
   render() {
@@ -84,7 +73,7 @@ export default class Home extends React.Component {
             <a href='#' onClick={this.homepageDrawerClose}>
               <p className="home-logo">PENNY <span className="home-logo-designs">DESIGNS</span></p>
             </a>
-            <div className={`${this.handleLoggedInHeaderView()} ${darkTabColumn} icons-holder`}>
+            <div className={`text-align-right ${darkTabColumn} icons-holder`}>
             {this.renderPage()}
               <i className={`fas fa-align-justify home-index-icon ${darkTab}`} onClick={this.handleDrawer}></i>
             </div>

@@ -51,11 +51,11 @@ export default class RegisterForm extends React.Component {
       .then(result => {
         if (result.error) {
           this.setState({
-            firstName: '',
-            lastName: '',
-            username: '',
-            password: '',
-            companyName: '',
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            username: this.state.username,
+            password: this.state.password,
+            companyName: this.state.companyName,
             registration: 'failed'
           });
         } else if (action === 'register') {

@@ -235,3 +235,31 @@ i {
 .message-and-user-icon {
   font-size: 19pt;
 }
+
+.log-out-button {
+  appearance: auto;
+  writing-mode: unset;
+  text-rendering: auto;
+  color: darkgray;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 0;
+  margin-top: 2.5rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding: 0;
+  border-width: 0;
+  border-style: none;
+  border-color: none;
+  border-image: none;
+}

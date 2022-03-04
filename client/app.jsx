@@ -84,7 +84,7 @@ export default class App extends React.Component {
         <>
           <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}
            adminLogged={this.state.isAdmin}/>
-          <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>
+          <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer} user={this.state.user}/>
           {this.renderPage()}
         </>
       </AppContext.Provider>

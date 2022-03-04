@@ -53,7 +53,7 @@ export default class Login extends React.Component {
           this.setState({ logIn: 'success' });
           window.location.hash = '#';
         } else {
-          this.setState({ username: '', password: '', logIn: 'failed' });
+          this.setState({ username: this.state.username, password: this.state.password, logIn: 'failed' });
         }
       });
   }
@@ -85,8 +85,7 @@ export default class Login extends React.Component {
                 <div className="submit-button-holder width-100p text-align-right">
                   <button className="registration-submit-button" type="submit">LOG IN</button>
                 </div>
-                <div className="forgot-password-register-holder flex space-between">
-                  <p className="forgot-p-register">Forgot your Password?</p>
+                <div className="forgot-password-register-holder text-align-right">
                   <a href="#register" className="clean-links">
                     <p className="forgot-p-register">Register</p>
                   </a>

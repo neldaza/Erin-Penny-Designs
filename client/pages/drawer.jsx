@@ -4,7 +4,9 @@ import AppContext from '../lib/app-context';
 export default class AppDrawer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: 'no' };
+    this.state = {
+      open: 'no'
+    };
     this.renderDrawer = this.renderDrawer.bind(this);
     this.handleDrawer = this.handleDrawer.bind(this);
     this.renderPage = this.renderPage.bind(this);
@@ -23,19 +25,23 @@ export default class AppDrawer extends React.Component {
 
   signOut() {
     const { handleSignOut } = this.context;
+    this.setState({ user: null });
     handleSignOut();
     this.handleDrawer();
+
   }
 
   renderPage() {
     const { user } = this.context;
+
     if (user) {
       return (
         <React.Fragment>
           <p className="index-p"><a href="#projects"
             onClick={this.handleDrawer}>PROJECTS</a></p>
-          <p className="index-p"><a href="#"
-            onClick={this.signOut}>LOG OUT</a></p>
+          <button className="index-p log-out-button" onClick={this.signOut}>
+            LOG OUT
+          </button>
         </React.Fragment>
       );
     }
@@ -49,6 +55,7 @@ export default class AppDrawer extends React.Component {
           onClick={this.handleDrawer}>REGISTER</a></p>
       </React.Fragment>
     );
+
   }
 
   render() {
