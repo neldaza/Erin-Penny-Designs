@@ -72,6 +72,10 @@
   position: absolute;
 }
 
+.space-around {
+  justify-content: space-around;
+}
+
 .width-50 {
   width: 50%;
 }
@@ -374,12 +378,6 @@
     text-align: right;
   }
 
-  .second-project-list {
-    flex-direction: row;
-  }
-
-  .second-project-list :nth-child(2) { order: 2; }
-
   .project-names-text {
     font-size: 10.5pt;
   }
@@ -431,5 +429,9 @@
 
   .message-and-user-icon {
     padding-right: 10px;
+  }
+
+  .second-project-list {
+    justify-content: space-around;
   }
 }

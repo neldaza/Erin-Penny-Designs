@@ -4,8 +4,16 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: lightgray;
+}
+
 button {
   cursor: pointer;
+}
+
+button:hover {
+  color: lightgray;
 }
 
 i {

@@ -60,14 +60,6 @@ export default class Projects extends React.Component {
                   );
                 })
             }
-            <li className="my-row arrow-list">
-              <div className="column-half arrow-holder-left">
-                <i className="fas fa-chevron-left"></i>
-              </div>
-              <div className="column-half arrow-holder-right">
-                <i className="fas fa-chevron-right"></i>
-              </div>
-            </li>
           </ul>
         </div>
       </div>
