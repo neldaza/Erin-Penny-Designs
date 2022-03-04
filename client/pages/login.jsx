@@ -94,10 +94,10 @@ export default class Login extends React.Component {
                 <h3 className="login-main-text register-main-text">LOGIN</h3>
                 <p className="register-p">Username</p>
                 <input className="register-input" type="text"
-                onChange={handleChange} name="username" required value="admin"/>
+                onChange={handleChange} name="username" required value={this.state.username} />
                 <p className="register-p">Password</p>
                 <input className="register-input" type="password" name="password"
-                onChange={handleChange} required value="admin"/>
+                onChange={handleChange} required value={this.state.password}/>
                 <p className={`${badLogIn} bad-login`}>
                   {badLogInMessage}
                 </p>
