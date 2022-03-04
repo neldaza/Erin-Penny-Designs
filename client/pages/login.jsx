@@ -29,8 +29,11 @@ export default class Login extends React.Component {
   }
 
   handleBadLoginMessage() {
-    if (this.state.logIn === 'failed') { return 'Invalid Login'; }
-    if (this.state.logIn === 'connection failed') { return 'Bad Request, please check your internet connection'; }
+    if (this.state.logIn === 'failed') {
+      return 'Invalid Login';
+    } else if (this.state.logIn === 'connection failed') {
+      return 'Bad Request, please check your internet connection';
+    }
     return 'Invalid Login';
   }
 

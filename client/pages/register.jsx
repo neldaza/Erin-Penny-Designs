@@ -15,11 +15,26 @@ export default class RegisterForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
     this.handleBadRegister = this.handleBadRegister.bind(this);
+    this.handleBadRegisterMessage = this.handleBadRegisterMessage.bind(this);
   }
 
   handleBadRegister() {
-    if (this.state.registration === 'failed') { return 'view'; }
-    if (this.state.registration !== 'failed') { return 'visibility-hidden'; }
+    if (this.state.registration === 'failed') {
+      return 'view';
+    } else if (this.state.registration === 'connection failed') {
+      return 'view';
+    } else {
+      return 'visibility-hidden';
+    }
+  }
+
+  handleBadRegisterMessage() {
+    if (this.state.registration === 'failed') {
+      return 'Username already taken';
+    } else if (this.state.registration === 'connection failed') {
+      return 'Bad Request, please check your internet connection';
+    }
+    return 'Username already taken';
   }
 
   handleChange(event) {
@@ -49,7 +64,7 @@ export default class RegisterForm extends React.Component {
     fetch(`/api/auth/${action}`, req)
       .then(res => res.json())
       .then(result => {
-        if (result.error) {
+        if (result.error === 'username already taken') {
           this.setState({
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -57,6 +72,15 @@ export default class RegisterForm extends React.Component {
             password: this.state.password,
             companyName: this.state.companyName,
             registration: 'failed'
+          });
+        } else if (result.error === 'an unexpected error occurred') {
+          this.setState({
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            username: this.state.username,
+            password: this.state.password,
+            companyName: this.state.companyName,
+            registration: 'connection failed'
           });
         } else if (action === 'register') {
           this.setState({ registration: 'success' });
@@ -68,6 +92,7 @@ export default class RegisterForm extends React.Component {
   render() {
     const { handleChange, handleSubmit } = this;
     const badRegistration = this.handleBadRegister();
+    const badRegistrationMessage = this.handleBadRegisterMessage();
 
     return (
       <div className='my-container whole-register width-80p flex align-items-center justify-content-center'
@@ -82,7 +107,7 @@ export default class RegisterForm extends React.Component {
                 <h3 className="register-main-text">REGISTER</h3>
                 <p className="register-p">Create Username</p>
                 <input className="register-input" type="text" name="username" onChange={handleChange} required />
-                <p className={`username-taken ${badRegistration}`}>Username already taken</p>
+                <p className={`username-taken ${badRegistration}`}>{badRegistrationMessage}</p>
                 <p className="register-p">Create Password</p>
                 <input className="register-input" type="password" name="password" onChange={handleChange} required />
               </div>
