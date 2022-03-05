@@ -1,7 +1,7 @@
 UPDATE "users"
-SET "isAdmin" = TRUE
-WHEN "username" = 'admin'
-WHERE "username" IN ('username')
+SET "isAdmin" = CASE
+WHEN "username" = 'admin' THEN true
+END;
 
 insert into "projects" ("name")
      values ('FIT'), ('Hudson Yards'), ('Kalish'), ('HBK'), ('45th Street');
