@@ -1,7 +1,5 @@
-UPDATE "users"
-SET "isAdmin" = CASE
-WHEN "username" = 'admin' THEN true
-END;
+insert into "users" ("firstName", "lastName", "username", "hashedPassword", "isAdmin")
+values ('admin', 'admin', 'admin', '$argon2i$v=19$m=4096,t=3,p=1$5+d3wLST4SncN2fAX2BREg$uJcYpQ46ZFQDfFZpW2apilTjXxYN/AYENRbnVVG2XHE', true);
 
 insert into "projects" ("name")
      values ('FIT'), ('Hudson Yards'), ('Kalish'), ('HBK'), ('45th Street');
