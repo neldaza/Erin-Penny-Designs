@@ -69,9 +69,9 @@ export default class Login extends React.Component {
           this.setState({ logIn: 'success' });
           window.location.hash = '#';
         } else if (result.error === 'an unexpected error occurred') {
-          this.setState({ username: this.state.username, password: this.state.password, logIn: 'connection failed' });
+          this.setState({ logIn: 'connection failed' });
         } else {
-          this.setState({ username: this.state.username, password: this.state.password, logIn: 'failed' });
+          this.setState({ logIn: 'failed' });
         }
       });
   }

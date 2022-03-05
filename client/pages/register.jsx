@@ -78,20 +78,10 @@ export default class RegisterForm extends React.Component {
       .then(result => {
         if (result.error === 'username already taken') {
           this.setState({
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            username: this.state.username,
-            password: this.state.password,
-            companyName: this.state.companyName,
             registration: 'failed'
           });
         } else if (result.error === 'an unexpected error occurred') {
           this.setState({
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            username: this.state.username,
-            password: this.state.password,
-            companyName: this.state.companyName,
             registration: 'connection failed'
           });
         } else if (action === 'register') {

@@ -267,9 +267,7 @@ i {
   margin-block-end: 1em;
   padding: 0;
   border-width: 0;
-  border-style: none;
-  border-color: none;
-  border-image: none;
+  border: none;
 }
 
 .success-x-holder {
