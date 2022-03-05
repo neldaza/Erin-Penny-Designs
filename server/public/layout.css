@@ -2,8 +2,12 @@
   display: none !important;
 }
 
+.visibility-hidden {
+  visibility: hidden;
+}
+
 .my-container {
-  max-width: 575px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -66,6 +70,10 @@
 
 .position-absolute {
   position: absolute;
+}
+
+.space-around {
+  justify-content: space-around;
 }
 
 .width-50 {
@@ -189,9 +197,9 @@
 .projects-opacity {
   top: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow-y: scroll;
-  z-index: 12;
+  z-index: 3;
 }
 
 .tab {
@@ -201,25 +209,12 @@
   width: 100%;
   padding-left: 2rem;
   transform: translateX(105vw);
-  z-index: 10;
+  z-index: 1;
 }
 
 .tab-out {
   transform: translateX(20vw);
   top: 0;
-  z-index: 10;
-}
-
-.header {
-  z-index: 11;
-}
-
-.carousel {
-  z-index: 8;
-}
-
-.whole-register {
-  z-index: 9;
 }
 
 .register-main-text {
@@ -227,22 +222,72 @@
 }
 
 .registration-form-holder {
-  width: 80%;
+  width: 80vw;
+  z-index: 0;
 }
 
-@media screen and (min-width: 500px) {
+.registration-form {
+  left: 0;
+  right: 0;
+}
+
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end,
+.carousel-fade .carousel-item.active {
+  z-index: unset;
+}
+
+.carousel-item,
+.carousel-inner {
+  position: unset;
+}
+
+.carousel {
+  position: unset;
+}
+
+.bootstrap-carousel {
+  z-index: 0;
+}
+
+.carousel-control-next {
+  z-index: 0;
+}
+
+.header {
+  z-index: 2;
+}
+
+.top-20 {
+  top: 20%;
+}
+
+.message-and-user-icon {
+  padding-right: 7.5px;
+}
+
+.success-holder {
+  width: 80vw;
+  z-index: 0;
+}
+
+@media screen and (min-width: 650px) {
   .my-container {
     width: 100%;
-    max-width: unset;
+    max-width: 100%;
+  }
+
+  .whole-register {
+    width: unset;
+  }
+
+  .registration-form-holder {
+    width: 40vw;
   }
 
   .projects-opacity {
     top: 0;
     overflow-y: scroll;
-  }
-
-  .background {
-    width: 100%;
   }
 
   .projects-holder {
@@ -263,42 +308,27 @@
     overflow-y: scroll;
   }
 
-  .registration-form-holder {
-    justify-content: center;
-    width: unset;
-    position: relative;
-  }
-
-  .registration-form {
-    width: 35vw;
-  }
-
   .registration-border {
     padding: 1.7rem;
   }
 
-  .whole-register {
-    z-index: 12;
-  }
-
   .header {
-    z-index: 13;
     justify-content: space-between;
   }
 
   .icons-holder {
     width: 13%;
   }
+
+  .success-holder {
+    width: 26.5vw;
+  }
 }
 
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1280px) {
   .my-container {
     width: 100%;
     max-width: unset;
-  }
-
-  .background {
-    width: 100%;
   }
 
   .first-project-list,
@@ -324,7 +354,15 @@
     bottom: 3rem;
     width: unset;
     height: unset;
-    z-index: 11;
+    z-index: 1;
+  }
+
+  .header {
+    z-index: 3;
+  }
+
+  .tab {
+    z-index: 2;
   }
 
   .project-pictures {
@@ -348,12 +386,6 @@
   .arrow-holder-right {
     text-align: right;
   }
-
-  .second-project-list {
-    flex-direction: row;
-  }
-
-  .second-project-list :nth-child(2) { order: 2; }
 
   .project-names-text {
     font-size: 10.5pt;
@@ -381,15 +413,6 @@
   .tab-out {
     transform: translateX(75vw);
     top: 0;
-    z-index: 12;
-  }
-
-  .header {
-    z-index: 13;
-  }
-
-  .registration-form {
-    width: 25vw;
   }
 
   .registration-border {
@@ -408,64 +431,20 @@
   .icons-holder {
     width: 7.5%;
   }
-}
 
-@media only screen and (min-device-width: 1024px)
-  and (max-device-width: 1366px)
-  and (orientation: landscape) {
-  .projects-holder {
-    margin-top: 6.5rem;
-  }
-}
-
-@media only screen and (min-device-width: 1024px)
-  and (max-device-width: 1366px)
-  and (orientation: portrait) {
-  .registration-form {
-    width: 35vw;
+  .registration-form-holder {
+    width: 20vw;
   }
 
-  .icons-holder {
-    width: 10%;
-  }
-}
-
-@media only screen and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: landscape) {
-  .registration-form {
-    width: 35vw;
+  .message-and-user-icon {
+    padding-right: 10px;
   }
 
-  .icons-holder {
-    width: 10%;
-  }
-}
-
-@media only screen and (min-device-width: 375px)
-  and (max-device-width: 812px)
-  and (orientation: landscape) {
-  .registration-form {
-    margin-top: 11rem;
+  .second-project-list {
+    justify-content: space-around;
   }
 
-  .icons-holder {
-    width: 11%;
-  }
-}
-
-@media only screen and (min-device-width: 375px)
-  and (max-device-width: 667px)
-  and (orientation: landscape) {
-  .registration-form {
-    width: 50vw;
-  }
-
-  .tab-out {
-    transform: translateX(60vw);
-  }
-
-  .icons-holder {
-    width: 13%;
+  .success-holder {
+    width: 16.5vw;
   }
 }

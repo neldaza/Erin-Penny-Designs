@@ -4,6 +4,22 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: lightgray;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  color: lightgray;
+}
+
+i {
+  cursor: pointer;
+}
+
 .background {
   height: 100vh;
   object-fit: cover;
@@ -24,9 +40,8 @@ a {
   font-weight: 700;
 }
 
-.home-tab {
+.home-index-icon {
   font-size: 19pt;
-  opacity: 0.38;
 }
 
 .projects-opacity {
@@ -87,7 +102,6 @@ a {
 .tab {
   display: flex;
   justify-content: left;
-  height: inherit;
   position: fixed;
   background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
   transition: transform 0.25s ease;
@@ -109,8 +123,6 @@ a {
 }
 
 .open-tab {
-  opacity: 1;
-  position: relative;
   color: darkgrey;
 }
 
@@ -172,7 +184,7 @@ a {
 }
 
 .submit-button-holder {
-  margin-top: 1.25rem;
+  margin-top: 0.5rem;
 }
 
 .registration-submit-button {
@@ -181,6 +193,7 @@ a {
   color: darkgrey;
   font-size: 15pt;
   font-weight: 700;
+  padding: 0;
 }
 
 .whole-register {
@@ -207,4 +220,57 @@ a {
 .admin-icon {
   color: yellow;
   opacity: 1;
+}
+
+.back-to-projects {
+  margin-block-end: 0;
+}
+
+.bad-login {
+  font-size: 10pt;
+  margin-block-end: unset;
+  font-weight: 700;
+}
+
+.username-taken {
+  font-size: 10pt;
+  margin-block: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.message-and-user-icon {
+  font-size: 19pt;
+}
+
+.log-out-button {
+  appearance: auto;
+  writing-mode: unset;
+  text-rendering: auto;
+  color: darkgray;
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 0;
+  margin-top: 2.5rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding: 0;
+  border-width: 0;
+  border: none;
+}
+
+.success-x-holder {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

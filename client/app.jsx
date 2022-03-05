@@ -8,6 +8,7 @@ import RegisterForm from './pages/register';
 import Login from './pages/login';
 import AppContext from './lib/app-context';
 import decodeToken from './lib/decode-token';
+import SuccessfulRegistration from './pages/successful-registration-modal';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -71,6 +72,9 @@ export default class App extends React.Component {
       return <RegisterForm action={route.path} isOpen={this.state.isDrawerOpen}
       onDrawerClick={this.openDrawer}/>;
     }
+    if (route.path === 'registration-successful') {
+      return <SuccessfulRegistration / >;
+    }
   }
 
   render() {
@@ -79,12 +83,12 @@ export default class App extends React.Component {
     const contextValue = { user, route, handleSignIn, handleSignOut };
 
     return (
-    <div className="my-container position-relative">
+    <div className="my-container">
       <AppContext.Provider value ={contextValue}>
         <>
           <Home onDrawerClick={this.openDrawer} isOpen={this.state.isDrawerOpen}
            adminLogged={this.state.isAdmin}/>
-          <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}/>
+          <AppDrawer isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer} user={this.state.user}/>
           {this.renderPage()}
         </>
       </AppContext.Provider>

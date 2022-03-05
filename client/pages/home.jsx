@@ -12,7 +12,6 @@ export default class Home extends React.Component {
     this.handleDarkTab = this.handleDarkTab.bind(this);
     this.handleDarkTabColumn = this.handleDarkTabColumn.bind(this);
     this.homepageDrawerClose = this.homepageDrawerClose.bind(this);
-    this.handleLoggedInHeaderView = this.handleLoggedInHeaderView.bind(this);
     this.renderPage = this.renderPage.bind(this);
     this.renderAdmin = this.renderAdmin.bind(this);
 
@@ -50,10 +49,9 @@ export default class Home extends React.Component {
     const { user } = this.context;
     if (user) {
       return (
-       <React.Fragment>
-          <i className={`fas fa-user home-tab ${this.renderAdmin()}`}></i>
-          <i className="fab fa-facebook-messenger home-tab"></i>
-        </React.Fragment>
+      <React.Fragment>
+        <i className={`fas fa-user message-and-user-icon ${this.renderAdmin()}`}></i>
+      </React.Fragment>
       );
     }
   }
@@ -63,46 +61,40 @@ export default class Home extends React.Component {
     if (user.isAdmin === true) { return 'admin-icon'; }
   }
 
-  handleLoggedInHeaderView() {
-    const { user } = this.context;
-    if (user) {
-      return 'space-between';
-    } else {
-      return 'justify-content-right';
-    }
-  }
-
   render() {
     const darkTab = this.handleDarkTab();
     const darkTabColumn = this.handleDarkTabColumn();
 
     return (
       <>
-    <div className="my-container position-relative background" onClick={this.homepageDrawerClose}>
-      <div className="header my-row position-fixed width-100p">
-        <div className="column-75 flex align-items-center space-between">
-          <p className="home-logo">PENNY <a className="home-logo-designs">DESIGNS</a></p>
-        </div>
-        <div className={`column-25 flex align-items-center
-        ${this.handleLoggedInHeaderView()} ${darkTabColumn} icons-holder`}>
-          {this.renderPage()}
-          <i className={`fas fa-align-justify home-tab ${darkTab}`} onClick={this.handleDrawer}></i>
-        </div>
-      </div>
-        {
-          <Carousel controls={true} indicators={false} fade={true} interval={5000}>
+      <div className='my-container'>
+        <header className="header my-row width-100p position-fixed">
+          <div className="column-full flex align-items-center space-between">
+            <a href='#' onClick={this.homepageDrawerClose}>
+              <p className="home-logo">PENNY <span className="home-logo-designs">DESIGNS</span></p>
+            </a>
+            <div className={`text-align-right ${darkTabColumn} icons-holder`}>
+            {this.renderPage()}
+              <i className={`fas fa-align-justify home-index-icon ${darkTab}`} onClick={this.handleDrawer}></i>
+            </div>
+          </div>
+        </header>
+        <div className='bootstrap-carousel width-100p position-fixed' onClick={this.homepageDrawerClose}>
           {
-            this.state.images.filter(images => images.homepage === true)
-              .map(background => {
-                return (
-                   <Carousel.Item key={background.photoId}>
-                     <img src={background.url} className="background my-container" />
-                   </Carousel.Item>
-                );
-              })
+            <Carousel controls={true} indicators={false} fade={true} interval={5000}>
+            {
+              this.state.images.filter(images => images.homepage === true)
+                .map(background => {
+                  return (
+                     <Carousel.Item key={background.photoId}>
+                       <img src={background.url} className="background" />
+                     </Carousel.Item>
+                  );
+                })
+            }
+            </Carousel>
           }
-          </Carousel>
-        }
+        </div>
       </div>
       </>
     );
