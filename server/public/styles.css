@@ -20,6 +20,10 @@ i {
   cursor: pointer;
 }
 
+img {
+  object-fit: cover;
+}
+
 .background {
   height: 100vh;
   object-fit: cover;
