@@ -243,8 +243,14 @@ values (
   3,
   '/images/Kalish/6.png',
   now(),
-  TRUE,
-  FALSE
+  FALSE,
+  TRUE
+  ), (
+  3,
+  '/images/Kalish/7.png',
+  now(),
+  FALSE,
+  TRUE
   ),  (
   4,
   '/images/HBK/1.png',
@@ -255,7 +261,7 @@ values (
   4,
   '/images/HBK/2.png',
   now(),
-  FALSE,
+  TRUE,
   TRUE
   ),  (
   4,
@@ -273,8 +279,8 @@ values (
   4,
   '/images/HBK/5.png',
   now(),
-  TRUE,
-  FALSE
+  FALSE,
+  TRUE
   ),  (
   4,
   '/images/HBK/6.png',
@@ -290,24 +296,6 @@ values (
   ),  (
   4,
   '/images/HBK/8.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  4,
-  '/images/HBK/9.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  4,
-  '/images/HBK/10.png',
-  now(),
-  FALSE,
-  TRUE
-  ),  (
-  4,
-  '/images/HBK/11.png',
   now(),
   FALSE,
   TRUE
