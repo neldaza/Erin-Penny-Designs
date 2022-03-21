@@ -98,12 +98,12 @@ Try the application live at https://penny-designs.herokuapp.com/
 
 5.  Import the database schema
     ```
-    psql -d pennyDesigns -f schema.sql
+    psql -d pennyDesigns -f database/schema.sql
     ```
 
 6.  Import the database's data
     ```
-    psql -d pennyDesigns -f data.sql
+    psql -d pennyDesigns -f database/data.sql
     ```
 ##### **Once your created db is synced with the project, future schema/data.sql changes can be quickly updated using npm run db:import**
 
