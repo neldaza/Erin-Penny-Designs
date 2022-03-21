@@ -70,56 +70,54 @@ Try the application live at https://penny-designs.herokuapp.com/
     cd Penny-Designs
     ```
 
-
-
 2.  Install all dependencies with NPM
     ```shell
     npm install
     ```
 
-
-
-
-2.  Ensure that PostgreSQL is running
+3.  Ensure that PostgreSQL and your dev environment are running
     ```shell
-    
+    dev-env
     sudo service postgresql start
     ```
 
-3.  Create a database for the project using PostgreSQL
+4.  Create a database for the project using PostgreSQL
     ```
     createdb pennyDesigns
     ```
 
-4.  cd into the project's folder
+5.  cd into the project's folder
     ```
     cd Penny-Designs
     ```
 
-5.  Import the database schema
+6.  Import the database schema
     ```
     psql -d pennyDesigns -f database/schema.sql
     ```
 
-6.  Import the database's data
+7.  Import the database's data
     ```
     psql -d pennyDesigns -f database/data.sql
     ```
+
 ##### **Once your created db is synced with the project, future schema/data.sql changes can be quickly updated using npm run db:import**
 
-7.  Open a separate terminal and run pgweb
+8.  Open a separate terminal and run pgweb while in your dev environment
     ```
+    dev-env
     pgweb
     ```
 ##### **This will be the terminal you use to operate on localhost:8081 to access the pgweb client to see any changes to your database**
 
 
-8. Open a seperate terminal and cd into the project again
+9. Open a seperate terminal and cd into the project again
    ```
+   dev-env
    cd Penny Designs
    ```
 
-9. run the dev script using NPM
+10. run the dev script using NPM
    ```
    npm run dev 
    ```
