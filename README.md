@@ -6,7 +6,7 @@ A loved one of mine works within the Interior Design field, and had a need for a
 
 This would be my primary motivator for building and continuing to work on this project; but also the fact that web developers are very often hired in the Interior Design field to custom build websites for large and even small scale firms to showcase their work to clientele.  I figured having my loved one as a "client", and building the site to their liking, would be excellent practice for future employment opportunities, and also very mutually beneficial.
 
-## Technologies Used 
+## Technologies 
 
 - React.js 
 - Express.js
