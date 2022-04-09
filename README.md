@@ -12,7 +12,7 @@ This would be my primary motivator for building and continuing to work on this p
 - Express.js
 - PostgreSQL
 - pgweb
-_ Babel
+- Babel
 - Argon
 - React Bootstrap
 - Webpack
