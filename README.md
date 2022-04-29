@@ -18,7 +18,7 @@ This would be my primary motivator for building and continuing to work on this p
 - Webpack
 - CSS3
 - HTML5
-- jquery
+- jQuery
 - Node.js
 - Docker
 
