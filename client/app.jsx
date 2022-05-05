@@ -9,6 +9,7 @@ import Login from './pages/login';
 import AppContext from './lib/app-context';
 import decodeToken from './lib/decode-token';
 import SuccessfulRegistration from './pages/successful-registration-modal';
+import EmailModal from './pages/email';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -58,22 +59,25 @@ export default class App extends React.Component {
     const { route } = this.state;
     if (route.path === 'login') {
       return <Login action={route.path} onSignIn={this.handleSignIn}
-      isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}
-      handleAdmin={this.handleAdmin} />;
+        isOpen={this.state.isDrawerOpen} onDrawerClick={this.openDrawer}
+        handleAdmin={this.handleAdmin} />;
     }
     if (route.path === 'projects') {
       return <Projects />;
     }
     if (route.path === 'project-details') {
       const projectId = route.params.get('projectId');
-      return <SpecificProject projectId={projectId}/>;
+      return <SpecificProject projectId={projectId} />;
     }
     if (route.path === 'register') {
       return <RegisterForm action={route.path} isOpen={this.state.isDrawerOpen}
-      onDrawerClick={this.openDrawer}/>;
+        onDrawerClick={this.openDrawer} />;
     }
     if (route.path === 'registration-successful') {
-      return <SuccessfulRegistration / >;
+      return <SuccessfulRegistration />;
+    }
+    if (route.path === 'email') {
+      return <EmailModal />;
     }
   }
 

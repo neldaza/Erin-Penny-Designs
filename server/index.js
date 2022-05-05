@@ -14,6 +14,7 @@ const db = new pg.Pool({
 });
 const app = express();
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 const authorizationMiddleware = require('./authorization-middleware');
 
 app.use(jsonMiddleware);
@@ -58,6 +59,33 @@ app.get('/api/images/:projectId', (req, res, next) => {
     })
     .catch(err => next(err));
 });
+
+app.post('/api/sendMail', (req, res, next) => {
+  const { subject, body } = req.body;
+  if (!body || !subject) {
+    throw new ClientError(400, 'to, subject, and body are required fields!');
+  }
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'pennydesignstest@gmail.com',
+      pass: 'pennytest1!'
+    }
+  });
+  const options = {
+    from: 'pennydesignstest@gmail.com',
+    to: 'pennydesignstest@outlook.com',
+    subject,
+    text: body
+  };
+  transporter.sendMail(options, (err, info) => {
+    if (err) {
+      next(err);
+    }
+    res.status(200).send(info.envelope);
+  });
+}
+);
 
 app.post('/api/auth/register', (req, res, next) => {
   const { firstName, lastName, username, password, companyName } = req.body;
