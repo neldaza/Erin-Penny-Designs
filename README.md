@@ -50,7 +50,7 @@ Try the application live at https://penny-designs.herokuapp.com/
 
 - User can send inquiry emails 
 - User can view About and Contact sections 
-- User (if registered) can leave reviews and view Reviews section
+- User (if Registered) can leave reviews and view Reviews section
 - User (if Admin) can review and approve reviews
 - User (if Admin) can remove or add photographs to the showcase
 
